@@ -3,7 +3,7 @@ main:
   - title: "About"
     url: /aboutme/about/
   
-docs:
+category:
   - title: Today I Learned
     children:
       - title: "Algorithm"
