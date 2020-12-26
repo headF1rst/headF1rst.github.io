@@ -1,8 +1,12 @@
 # main links
 main:
   - title: "About"
-    url: /aboutme/about/
-  
+    url: /about/
+  - title: "Category"
+    url: /categories/
+  - title: "Portfolio"
+    url: /portfolio/
+    
 category:
   - title: Today I Learned
     children:
