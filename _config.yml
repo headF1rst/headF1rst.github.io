@@ -280,10 +280,10 @@ defaults:
       share: true
       related: true
 
-  # _docs
+  # _pages
   - scope:
       path: ""
-      type: docs
+      type: category
     values:
       sidebar:
-        nav: "docs"
+        nav: "category"

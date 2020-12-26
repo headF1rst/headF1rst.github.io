@@ -1,27 +1,25 @@
 # main links
 main:
   - title: "About"
-    url: /_pages/aboutme/about.md/
-  - title: "Portfolio"
-    url:  /_pages/aboutme/about.md/ #나중에 바꿔줘
-
+    url: /aboutme/about/
+  
 docs:
   - title: Today I Learned
     children:
       - title: "Algorithm"
-        url: /docs/algorithm/
+        url: /category/algorithm/
       - title: "Data Structure"
-        url: /docs/data-structure/
+        url: /category/data-structure/
       - title: "C++"
-        url: /docs/c-plus/
+        url: /category/c-plus/
       - title: "System Programming"
-        url: /docs/system-programming/
+        url: /category/system-programming/
   
   - title: Diary
     children:
-      -title: "My thoughts"
-        url: /docs/my-thoughts/
-        
+      - title: "My thoughts"
+        url: /category/my-thoughts/
+
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
