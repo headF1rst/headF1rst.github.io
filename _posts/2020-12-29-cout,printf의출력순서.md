@@ -56,7 +56,7 @@ i=0 i++=-1 i--=0
 sequence point를 사이에 두지 않고 하나의 변수의 값을 두번 이상 변경하는 경우 Undefined behavior의 예에 속한다. 예를들어 ```i = i++``` 의 경우 변수 ``ì`` 가 두변 변하는 사이에 sequence point가 존재하지 않기 때문에 undefined 이라고 볼수있다. 즉 이러한 undefined behavior 때문에 printf 인자의 실행순서가 명확하지 않고 컴파일러에 따라 다른 순서로 수행하게 되면서 다른 결과가 출력되게 된것이다.
 
 ---
-##Sequence point
+## Sequence point
 >시퀀스 포인트는 컴퓨터 프로그램의 실행에서 이전 평가의 모든 부작용이 수행되고 후속 평가의 부작용이 아직 수행되지 않았 음을 보증합니다. 
 
 - Between the evaluations of the function designator and actual arguments in a function call and the actual call;
