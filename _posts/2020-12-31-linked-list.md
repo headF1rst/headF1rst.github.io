@@ -105,6 +105,7 @@ ex ) list\<int> ls;
 - ```assign(num_element, value)``` : num_element 개의 원소를 할당하고 value값으로 초기화한다.
 
 __사용 예제__
+
 ```cpp
 #include <iostream>
 #include <list>
@@ -112,7 +113,6 @@ using namespace std;
 
 int main(void)
 {
-
 	list<int> l;
 
 	// push_back
