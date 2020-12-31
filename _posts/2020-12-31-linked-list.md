@@ -76,15 +76,19 @@ void DblList::Delete(DblListNode *x)
 ![DblLinked-list-Delete](/assets/images/DblLinked-list-Delete.png "이중 연결 리스트 삭제")
 
 ### [STL] list의 멤버함수 및 사용
+
 ```#include<list>``` 
 ```list<[Data type]> [변수이름];```
 ex ) list\<int> ls;
 
 <b>Iterator (반복자)</b>
+
 - ```begin()``` : beginning iterator 반환
+
 - ```end()``` : end iterator 반환
 
 <b>삽입 및 삭제</b>
+
 - ```push_front(element)``` : 리스트 맨앞에 원소 추가
 - ```push_back(element)``` : 리스트 맨뒤에 원소 추가
 - ```pop_front(element)``` : 리스트 맨앞 원소 삭제
@@ -95,11 +99,13 @@ ex ) list\<int> ls;
 - ```remove_if(predict)``` : 단항 조건자 predicate에 해당하는 원소를 모두 제거
 
 <b>Search</b>
+
 - ```front()``` : 맨앞의 원소를 반환
 - ```back()``` : 맨뒤의 원소를 반환
 - ```*iterator``` : iterator가 가리키는 원소에 접근
 
 <b> ETC</b>
+
 - ```empty()``` : 리스트가 비었으면 true, 아니면 false 반환
 - ```size()``` : 리스트의 총 원소수를 반환
 - ```assign(num_element, value)``` : num_element 개의 원소를 할당하고 value값으로 초기화한다.
