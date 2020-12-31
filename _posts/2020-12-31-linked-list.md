@@ -67,6 +67,7 @@ void DblList::Delete(DblListNode *x)
     }
 }
 ```
+
 ### 이중 연결 원형 리스트에서의 <u>삽입</u>
 
 ![DblLinked-list-Insert](/assets/images/DblLinked-list-Insert.png "이중 연결 리스트 삽입")
@@ -79,9 +80,9 @@ void DblList::Delete(DblListNode *x)
 
 ```#include<list>``` 
 
-```list<[Data type]> [변수이름];```
+```list<[Data type]> [변수이름]; ```
 
-ex ) list\<int> ls;
+ex) list\<int> ls;
 
 <b>Iterator (반복자)</b>
 
@@ -115,7 +116,7 @@ ex ) list\<int> ls;
 
 - ```*iterator``` : iterator가 가리키는 원소에 접근
 
-<b> ETC</b>
+<b>ETC</b>
 
 - ```empty()``` : 리스트가 비었으면 true, 아니면 false 반환
 
