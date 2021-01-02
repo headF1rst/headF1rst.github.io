@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "[STL] Liked-list 연결리스트"
+title: "[STL] 연결 리스트 Liked-list"
 category: 
     - TIL
     - STL
@@ -80,7 +80,7 @@ void DblList::Delete(DblListNode *x)
 
 ```#include<list>``` 
 
-```list<[Data type]> [변수이름]; ```
+```list<[Data type]> [변수이름];```
 ex) list<int> ls;
 
 **Iterator (반복자)**
