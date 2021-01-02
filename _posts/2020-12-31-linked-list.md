@@ -79,16 +79,17 @@ void DblList::Delete(DblListNode *x)
 ### [STL] list의 멤버함수 및 사용
 
 ```#include<list>``` 
-```list<[Data type]> [변수이름]; ```
-ex) list\<int> ls;
 
-<b>Iterator (반복자)</b>
+```list<[Data type]> [변수이름]; ```
+ex) list<int> ls;
+
+**Iterator (반복자)**
 
 - **begin()** : beginning iterator 반환
 
 - **end()** : end iterator 반환
 
-<b>삽입 및 삭제</b>
+**삽입 및 삭제**
 
 - **push_front(element)** : 리스트 맨앞에 원소 추가
 
@@ -106,7 +107,7 @@ ex) list\<int> ls;
 
 - **remove_if(predict)** : 단항 조건자 predicate에 해당하는 원소를 모두 제거
 
-<b>Search</b>
+**Search**
 
 - **front()** : 맨앞의 원소를 반환
 
@@ -114,7 +115,7 @@ ex) list\<int> ls;
 
 - ***iterator** : iterator가 가리키는 원소에 접근
 
-<b>ETC</b>
+**ETC**
 
 -  **empty()** : 리스트가 비었으면 true, 아니면 false 반환
 
