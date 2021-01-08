@@ -1,0 +1,34 @@
+# main links
+main:
+  - title: "Category"
+    url: /categories/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "About"
+    url: /about/
+    
+category:
+  - title: Today I Learned
+    children:
+      - title: "Algorithm"
+        url: /category/algorithm/
+      - title: "Data Structure"
+        url: /category/data-structure/
+      - title: "C++"
+        url: /category/c-plus/
+      - title: "System Programming"
+        url: /category/system-programming/
+  
+  - title: Diary
+    children:
+      - title: "My thoughts"
+        url: /category/my-thoughts/
+
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
