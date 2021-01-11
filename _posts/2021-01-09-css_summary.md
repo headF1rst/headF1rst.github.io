@@ -30,7 +30,7 @@ link 태그를 통한 스타일 시트 작성 방법은 동일한 CSS 스타일�
 ### 셀렉터
 셀렉터$($selector)는 특정 HTML 태그의 모양을 꾸밀 스타일 시트를 선택하는 기능입니다. 위의 h3처럼 태그 이름이 셀렉터가 되기도 하고 id 속성이나 class 속성 값을 셀렉터로 사용하기도 하며 여러 셀렉터를 조합하여 사용하기도 합니다. 여기서는 class 셀렉터에 대해서 알아보겠습니다.
 
-**class 셀렉터**
+**class 셀렉터** <br>
 셀렉터 이름 앞에 점을 붙인 경우, 이 셀렉터는 HTML 태그의 `class`속성으로만 지정할 수 있습니다. 또한 class 셀렉터는 class 속성이 같은 모든 태그에 적용됩니다.
 ``` css
 .warning {color : blue;} /* css */
@@ -43,26 +43,26 @@ link 태그를 통한 스타일 시트 작성 방법은 동일한 CSS 스타일�
 ```
 `body.main` 과 같이 태그 이름과 함께 만들어 진 경우엔 해당 태그에만 제한되어 사용되게 됩니다. 즉, class="main"을 div 같은 다른 태그에선 사용 불가 합니다.
 
-**전체 셀렉터**
+**전체 셀렉터** <br>
 (*) 문자를 사용하여 웹 페이지의 모든 태그에 해당 스타일을 적용. 
 ``` css
 *{color : blue;} /* css */
 ```
-**속성 셀렉터**
+**속성 셀렉터** <br>
 HTML 태그의 특정 속성의 속성값에 일치하는 태그에만 스타일 적용.
 ``` css
 input[type=text] {color : blue;} /* type 속성값이 "text"인 <input> 태그에 적용 */
 ```
-**가상 클래스 셀렉터**
+**가상 클래스 셀렉터** <br>
 어떤 상황이 발생하였을 때만 적용하도록 만들어진 셀렉터.
 여러가지가 있지만 대표적으로 `:hover`의 경우 특정 태그 위에 마우스가 올라오면 그 태그에 스타일을 적용시킵니다.
 ``` css
 li:hover {background : blue;} /* <li> 태그에 마우스 올라가면 배경화면을 blue로 출력. 마우스 내려가면 원래대로 복귀 */
 ```
-### 색과 텍스트 꾸미기
+### 색과 텍스트 꾸미기 <br>
 CSS에서 색은 16, 10진수 코드로 표현되거나 색 이름으로 표현되지만 이중 가장 선호되는 방식은 색 이름으로 표현하는 것 입니다.
 
-**색 관련 프로퍼티**
+**색 관련 프로퍼티** 
 ``` css
 태그 {
 color : 색; /* HTML 태그의 텍스트 글자색 */
@@ -80,14 +80,14 @@ text-decoration : none | underline | overline | line-through; /* HTML 태그의 
 ```  
 text-indent에서 `<length>`는 3px 같이 고정된 길이이고 `<percentage>`는 텍스트 블록 전체 폭에 대한 비율로 들여쓰기 하는 방식 입니다. text-align에서 justify는 양쪽정렬을 의미 합니다.
 
-**폰트 이름 지정 font-family**
+**폰트 이름 지정 font-family** <br>
 font-family 프로퍼티에는 텍스트에 사용할 폰트 이름을 지정할수 있습니다. 만약 해당 폰트가 브라우저에서 지원하지 않을 경우 뒤에 나열된 폰트 순으로 적용됩니다. 
 
 ex$)$Arial을 지원하지 않으면 "Times New Roman" 사용. 폰트 이름에 빈칸이 있으면 " "로 묶어서 표현.
 ``` css
 font-family : Arial, "Times New Roman", Serif:
 ```
-**폰트 크기, font-size**
+**폰트 크기, font-size** 
 ``` css
 font-size : 1.6em; /*현재 폰트의 1.6배 크기로 설정*/
 ``` 
@@ -125,7 +125,7 @@ p {
 }
 ``` 
 
-**둥근 모서리 테두리, border-radius**
+**둥근 모서리 테두리, border-radius** <br>
 `border-radius`프로퍼티를 이용하여 테두리의 모서리를 둥글게 만들 수 있습니다.
 ``` cpp
 { border-radius : 50px; /*네 모서리 모두 반지름이 50px인 둥근 모서리로 만들어줌*/}
@@ -134,7 +134,7 @@ p {
 ``` 
 두번째의 경우 왼쪽 맨 위의 모서리 부터 시계방향 순으로 해당 반지름을 적용 시켜줍니다.
 
-**이미지 테두리, border-image**
+**이미지 테두리, border-image** <br>
 `border-image`프로퍼티를 이용해 테두리를 모서리$($corner)와 에지$($edge)로 구분하여 이미지를 입힐 수 있습니다. 단 border-image는 border-style 대신 지정되기 때문에 다음의 프로퍼티가 먼저 지정되어 있어야 합니다.
 ``` cpp
 { border-width : 30px; /*테두리 폭 지정*/}
@@ -150,7 +150,7 @@ p {
 - repeat - 이미지 크기 조절 안됨. 에지 이미지 반복 배치
 - stretch - 에지 이미지를 테두리 길이만큼 늘여 배치
 
-**배경**
+**배경** <br>
 - `background-color : skyblue;` - 배경 색을 지정
 - `background-image : url("media/dog.png");` - 배경 이미지를 지정
 - `background-position : center center;` - 박스 내 배경 이미지의 시작 위치를 지정한다.
@@ -159,7 +159,7 @@ p {
 
 ### 시각적 효과
 
-**텍스트 그림자, text-shadow**
+**텍스트 그림자, text-shadow** <br>
 text-shadow 프로퍼티를 이용하면 텍스트에 그림자 효과를 줄 수 있습니다. 
 `text-shadow : h-shadow v-shadow blur-radius color|none`
 - h-shadow, v-shadow : 원본 텍스트와 그림자 사이 수평/수직 거리$($필수)
@@ -172,7 +172,7 @@ div.blur {
     text-shadow : 3px 3px 5px red;
 }
 ```
-**박스 그림자, box-shadow**
+**박스 그림자, box-shadow** <br>
 box-shadow 프로퍼티를 이용하면 박스 전체에 그림자 효과를 줄 수 있습니다. 
 `box-shadow : h-shadow v-shadow blur-radius spread-radius color | none | inset`
 - spread-radius : 그림자 크기
