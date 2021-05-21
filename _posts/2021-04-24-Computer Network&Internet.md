@@ -11,6 +11,15 @@ category :
 
 `IEEE`에서는 네트워크를 "몇개의 독립적인 장치가 적절한 영역 내에서 적당히 빠른 속도의 물리적 통신 체널을 통하여 서로가 직접 통신할 수 있도록 지원해주는 데이터 통신 체계" 라고 정의하고 있습니다.
 
+### 네트워크의 종류
+
+![point to point network](/assets/images/ComputerNetwork/Network-type.png)
+
+- PAN$($Personal Area Network) : 가장 작은 규모의 네트워크, 개인 네트워크
+- LAN(Local Area Network) : 근거리 영역 네트워크
+- MAN(Metropolitan Area Network) : 대도시 영역 네트워크
+- WAN$($Wide Area Network) : 광대역 네트워크. 주로 ISP$($Internet Service Provider)에 의해 제공. ISP = KT, SKT... 
+
 ### 스위칭
 ![point to point network](/assets/images/ComputerNetwork/point_to_point.jpeg)
 
@@ -54,7 +63,7 @@ point to point 방식의 경우 모든 단말들 간의 연결을 해야하기 �
 
 아래는 데이터그램에서 패킷들이 경로를 결정하는 과정을 보여주는 그림입니다.
 
-<center><img src = "/assets/images/ComputerNetwork/datagrampath.png" width = "100" height = "200"></center>
+<center><img src = "/assets/images/ComputerNetwork/datagrampath.png" width = "200" height = "300"></center>
 
 라우터가 1~4번의 포트를 갖고있을때 목적지가 4150인 패킷은 2번 포트로 보내지게 된다는 것을 의미합니다.
 
@@ -68,7 +77,7 @@ point to point 방식의 경우 모든 단말들 간의 연결을 해야하기 �
 ### 패킷 지연과 손실
 ![packet_loss&delay](/assets/images/ComputerNetwork/packet_loss.jpeg)
 
-여러 노드(컴퓨터)에서 전송된 패킷들은 라우터의 버퍼에 큐잉(queueing)됩니다. 패킷은 큐에서 자기 차례를 기다리며 (지연) 패킷 도착률이 출력 링크 용량을 일시적으로 넘어서 패킷이 도착했을 때 버퍼(queue)에 빈공간이 없다면 해당 패킷은 버려지게 됩니다. (손실) 
+여러 노드$($컴퓨터)에서 전송된 패킷들은 라우터의 버퍼에 큐잉$($queueing)됩니다. 패킷은 큐에서 자기 차례를 기다리며 $($지연) 패킷 도착률이 출력 링크 용량을 일시적으로 넘어서 패킷이 도착했을 때 버퍼(queue)에 빈공간이 없다면 해당 패킷은 버려지게 됩니다. $($손실) 
 
 이때 손실된 패킷은 직전 노드나 송신측 종단 시스템에서 재전송될 수도 있고, 그렇지 않을 수도 있습니다.
 
