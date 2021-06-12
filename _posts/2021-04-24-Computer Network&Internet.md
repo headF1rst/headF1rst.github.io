@@ -1,6 +1,6 @@
 ---
 toc : true
-title : "Computer Network & Internet"
+title : "[Network] Computer Network & Internet"
 category : 
     - 컴퓨터네트워크
 ---

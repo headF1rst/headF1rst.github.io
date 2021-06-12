@@ -1,6 +1,6 @@
 ---
 toc : true
-title : "Application architectures"
+title : "[Network] Application architectures"
 category : 
     - 컴퓨터네트워크
 ---
@@ -58,7 +58,8 @@ HTTP 프로토콜에 대해 알아보기 전에 웹페이지에 존재하는 `ob
 
 이러한 object는 URL을 통해 접근 가능합니다. client는 object을 받기위해 원하는 object에 대한 정보를 담고있는 URL을 포함한 HTTP 프로토콜을 사용하여 서버로 부터 object를 요청합니다.
 
-![URL](/assets/images/ComputerNetwork/URL.Jpeg)
+![URL](/assets/images/ComputerNetwork/URL.jpeg)
+
 
 ---
 
@@ -162,6 +163,8 @@ POST 와 GET 메소드는 HTTP 프로토콜에서 데이터를 client에서 serv
 |403|금지|서버가 요청을 거부하고 있다.|
 |404|찾을 수 없음|요청한 자원이 서버에 존재하지 않는다.|
 |505|지원하지 않는 HTTP 버전| 해당 버전의 HTTP를 지원하지 않는다|
+
+
 <br> <br>
 
 

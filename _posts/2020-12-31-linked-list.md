@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "[STL] 연결 리스트 Liked-list"
+title: "[STL] 연결 리스트 Linked-list"
 category: 
     - TIL
     - STL
