@@ -129,7 +129,7 @@ General format
 
 POST 와 GET 메소드는 HTTP 프로토콜에서 데이터를 client에서 server로 전송한다는 공통점이 존재하지만 분명한 차이점 또한 존재하며 상황에 알맞는 메소드를 사용하는것이 중요합니다.
 
-[GET vs POST 글로 이동합니다](./2021-05-22-GETvsPOST.md)
+[GET vs POST 글로 이동합니다](#2021-05-22-GETvsPOST.md)
 
 **2) URL**
 

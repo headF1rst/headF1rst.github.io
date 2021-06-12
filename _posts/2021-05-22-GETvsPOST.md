@@ -35,17 +35,17 @@ user=value1&pass=value2
 
 여러 Content-Type중 대표적인 세가지는 다음과 같습니다.
 
-1. >application/x-www-form-urlencoded
+1. **application/x-www-form-urlencoded**
 
 구분자 &를 사용하며 GET과 같은 방식으로 BODY에 key, value 쌍으로 데이터를 넣습니다. $($컨텐츠를 명시해 주지 않은 경우 디폴트 값으로 사용됩니다.)
 <br>
 
-2. >text/plain
+2. **text/plain**
 
 BODY에 단순 txt를 넣습니다
 <br>
 
-3. >multipart/form-data
+3. **multipart/form-data**
 
 BODY의 데이터를 binary 데이터로 넣는다는 것을 알려줍니다. 주로 파일전송에 많이 쓰이는 타입 입니다.
 <br>
@@ -66,7 +66,7 @@ BODY의 데이터를 binary 데이터로 넣는다는 것을 알려줍니다. �
 - GET 방식의 요청은 캐싱을 사용하여 POST 보다 빠릅니다
 
 
->참고
-(https://www.guru99.com/difference-get-post-http.html)
+참고자료
+- https://www.guru99.com/difference-get-post-http.html
 
 
