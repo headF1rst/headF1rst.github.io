@@ -6,7 +6,8 @@ category :
 ---
 
 ### 환경
-아래의 세팅이 완료된 상황에서 진행하였습니다.
+아래의 세팅이 완료된 상황에서 진행하였습니다. 
+
 **Installed list**
 - VirtualBox 6.1.18
 - Ubuntu 20.04
@@ -16,10 +17,11 @@ category :
 ### PHP 7.4.1 컴파일 설치
 
 **1. php 컴파일 설치를 위한 패키지 설치**
-`/usr/local# apt-get install libxml2-dev`
-`/usr/local# apt-get install libjpeg-dev`
-`/usr/local# apt-get install libpng-dev`
-`/usr/local# apt-get install libsqlite3-dev`
+
+`/usr/local# apt-get install libxml2-dev` <br>
+`/usr/local# apt-get install libjpeg-dev` <br>
+`/usr/local# apt-get install libpng-dev` <br>
+`/usr/local# apt-get install libsqlite3-dev` <br>
 
 **2. php 설치**
 
@@ -28,26 +30,26 @@ php-7.4.1.tar.gz 파일을 다운받은 후 압축해제하여 줍니다.
 `/usr/local# wget https://www.php.net/distributions/php-7.4.1.tar.gz`
 `/usr/local# tar xvfz php-7.4.1.tar.gz`
 
-```
-/usr/local/php-7.4.1# ./configure \
-> --with-apxs2=/usr/local/apache2.4/bin/apxs \
-> --enable-mysqlnd \
-> --with-mysql-sock=mysqlnd \
-> --with-mysqli=mysqlnd \
-> --with-pdo-mysql=mysqlnd \
-> --with-imap-ssl \
-> --with-iconv \
-> --enable-gd \
-> --with-jpeg \
-> --with-libxml \
-> --with-openssl
-``` 
+
+`/usr/local/php-7.4.1# ./configure \` <br>
+`> --with-apxs2=/usr/local/apache2.4/bin/apxs \` <br>
+`> --enable-mysqlnd \` <br>
+`> --with-mysql-sock=mysqlnd \` <br>
+`> --with-mysqli=mysqlnd \` <br>
+`> --with-pdo-mysql=mysqlnd \` <br>
+`> --with-imap-ssl \` <br>
+`> --with-iconv \` <br>
+`> --enable-gd \` <br>
+`> --with-jpeg \` <br>
+`> --with-libxml \` <br>
+`> --with-openssl` <br>
+
 
 ![kill_error](/assets/images/Back_End/install_php.png) 
 
-`/usr/local/php-7.4.1# make`
-`/usr/local/php-7.4.1# make test`
-`/usr/local/php-7.4.1# make install`
+`/usr/local/php-7.4.1# make` <br>
+`/usr/local/php-7.4.1# make test` <br>
+`/usr/local/php-7.4.1# make install` <br>
 
 ![kill_error](/assets/images/Back_End/php_install.png) 
 
@@ -81,11 +83,11 @@ php-7.4.1.tar.gz 파일을 다운받은 후 압축해제하여 줍니다.
 
 **<? php> 와 같이 띄어쓰기를 하면 phpinfo 페이지가 나오지 않기 때문에 주의해야 합니다**
 
-`/usr/local# apache2.4/bin/httpd -k start`
-`/usr/local# ps -ef | grep httpd | grep -v grep`
-`/usr/local# netstat -anp | grep httpd`
+`/usr/local# apache2.4/bin/httpd -k start` <br>
+`/usr/local# ps -ef | grep httpd | grep -v grep` <br>
+`/usr/local# netstat -anp | grep httpd` <br>
 
-`/usr/local# curl http://127.0.1.1`
+`/usr/local# curl http://127.0.1.1` <br>
 
 ![kill_error](/assets/images/Back_End/php_works.png) 
 

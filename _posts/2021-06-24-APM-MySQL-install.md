@@ -6,6 +6,7 @@ category :
 ---
 ### 환경
 아래의 세팅이 완료된 상황에서 진행하였습니다.
+
 **Installed list**
 - VirtualBox 6.1.18
 - Ubuntu 20.04
@@ -136,11 +137,10 @@ journal도 지워보고 swap공간도 늘려보고 vmware 세팅에서 디스크
 
 **기본 데이터베이스 설정**
 
-```
-/usr/local/mysql/bin# ./mysqld --initialize --user=mysql \
-> --basedir=/usr/local/mysql \
-> --datadir=/usr/local/mysql/data
-``` 
+
+`/usr/local/mysql/bin# ./mysqld --initialize --user=mysql \` <br>
+`> --basedir=/usr/local/mysql \` <br>
+`> --datadir=/usr/local/mysql/data` <br>
 
 ![kill_error](/assets/images/Back_End/db-setting.jpg)
 
