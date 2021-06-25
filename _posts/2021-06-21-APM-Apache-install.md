@@ -50,7 +50,7 @@ category :
 
 **3. apr, apr-util 설치**
 
-다음은 apr 설치
+다음은 apr 설치 <br>
 `# cd usr/local/apr-1.7.0` <br>
 `# ./configure --prefix=/usr/local/apr` <br>
 `# make` <br>

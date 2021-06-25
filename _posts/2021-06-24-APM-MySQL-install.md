@@ -13,50 +13,50 @@ category :
 
 ### MySQL 설치
 
-**1. MySQL 컴파일 설치를 위한 패키지 설치**
-`$ sudo su` 
-`/usr/local# apt-get update`
-`/usr/local# apt-get install cmake`
-`/usr/local# apt-get install libssl-dev`
-`/usr/local# apt-get install libboost-all-dev`
-`/usr/local# apt-get install libncurses5-dev libncursesw5-dev`
+**1. MySQL 컴파일 설치를 위한 패키지 설치** <br>
+`$ sudo su` <br>
+`/usr/local# apt-get update` <br>
+`/usr/local# apt-get install cmake` <br>
+`/usr/local# apt-get install libssl-dev` <br>
+`/usr/local# apt-get install libboost-all-dev` <br>
+`/usr/local# apt-get install libncurses5-dev libncursesw5-dev` <br>
 
 [MySQL 의존성 패키지 설치 공식 문서](https://dev.mysql.com/doc/refman/8.0/en/source-installation-prerequisites.html)를 참고하였습니다.
 
-**2. MySQL Community Server 8.0.19 설치**
-Apache 설치 과정과 마찬가지로 `wget`을 사용하여 mysql-8.0.19 압축 파일을 사이트로 부터 다운받은 다음 `tar xvfz`로 압축을 해제해 줍니다.
+**2. MySQL Community Server 8.0.19 설치** <br>
+Apache 설치 과정과 마찬가지로 `wget`을 사용하여 mysql-8.0.19 압축 파일을 사이트로 부터 다운받은 다음 `tar xvfz`로 압축을 해제해 줍니다. <br>
 
-`/usr/local# wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.19.tar.gz`
-`/usr/local# tar xvfz mysql-8.0.19.tar.gz`
+`/usr/local# wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.19.tar.gz` <br>
+`/usr/local# tar xvfz mysql-8.0.19.tar.gz` <br>
 
 **3. MySQL 설치**
 
-> **cmake** : 설치 옵션 부여
-> **make** : build, 컴파일
-> **make install** : 컴파일한 파일 설치 진행
+> **cmake** : 설치 옵션 부여 <br>
+> **make** : build, 컴파일 <br>
+> **make install** : 컴파일한 파일 설치 진행 <br>
 
-mysql-8.0.19 디렉토리 내에 새로운 디렉토리 생성후 그안에서 cmake을 수행해야 합니다.. $($저의 경우 "springmysql" 이라는 이름의 디렉토리를 생성해 주었습니다.)
+mysql-8.0.19 디렉토리 내에 새로운 디렉토리 생성후 그안에서 cmake을 수행해야 합니다... <br> $($저의 경우 "springmysql" 이라는 이름의 디렉토리를 생성해 주었습니다.)
 
-```
-/usr/local/mysql-8.0.19/springmysql# cmake \
-> .. \
-> -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
-> -DMYSQL_DATADIR=/usr/local/mysql/data \
-> -DMYSQL_UNIX_ADDR=/usr/local/mysql/mysql.sock \
-> -DMYSQL_TCP_PORT=3306 \
-> -DDEFAULT_CHARSET=utf8 \
-> -DDEFAULT_COLLATION=utf8_general_ci \
-> -DSYSCONFDIR=/etc \
-> -DWITH_EXTRA_CHARSETS=all \
-> -DWITH_INNOBASE_STORAGE_ENGINE=1 \
-> -DWITH_ARCHIVE_STORAGE_ENGINE=1 \
-> -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
-> -DDOWNLOAD_BOOST=1 \
-> -DWITH_BOOST=/usr/local/mysql/boost 
 
-/usr/local/mysql-8.0.19/springmysql# make
-/usr/local/mysql-8.0.19/springmysql# make install
-``` 
+`/usr/local/mysql-8.0.19/springmysql# cmake \` <br>
+`> .. \` <br>
+`> -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \` <br>
+`> -DMYSQL_DATADIR=/usr/local/mysql/data \` <br>
+`> -DMYSQL_UNIX_ADDR=/usr/local/mysql/mysql.sock \` <br>
+`> -DMYSQL_TCP_PORT=3306 \` <br>
+`> -DDEFAULT_CHARSET=utf8 \` <br>
+`> -DDEFAULT_COLLATION=utf8_general_ci \` <br>
+`> -DSYSCONFDIR=/etc \` <br>
+`> -DWITH_EXTRA_CHARSETS=all \` <br>
+`> -DWITH_INNOBASE_STORAGE_ENGINE=1 \` <br>
+`> -DWITH_ARCHIVE_STORAGE_ENGINE=1 \` <br>
+`> -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \` <br>
+`> -DDOWNLOAD_BOOST=1 \` <br>
+`> -DWITH_BOOST=/usr/local/mysql/boost` <br>
+
+`/usr/local/mysql-8.0.19/springmysql# make` <br>
+`/usr/local/mysql-8.0.19/springmysql# make install`
+
 
 만약 springmysql과 같은 디렉토리를 새로 생성해 주지 않았다면 다음과 같은 오류가 발생합니다.
 
@@ -68,15 +68,17 @@ mysql-8.0.19 디렉토리 내에 새로운 디렉토리 생성후 그안에서 c
 
 ![dforce](/assets/images/Back_End/cmake-boost-error.jpg) 
 
-이는 boost_1_73_0.tar.gz 파일을 `/usr/local/mysql/boost` 경로에 다운받는 것을 실패하여 발생하는 것이었습니다. 에러 메세지에서 boost파일을 다운받기 권장하는 사이트는 Forbidden 되어 있기 때문에 "Sourceforge" 사이트에서 에러 메세지에 알맞는 버전의 boost 파일을 다운받으면 해결됩니다.
+이는 boost_1_73_0.tar.gz 파일을 `/usr/local/mysql/boost` 경로에 다운받는 것을 실패하여 발생하는 것이었습니다.
 
-`/usr/local/mysql/boost# wget https://sourceforge.net/projects/boost/files/boost/1.73.0/boost_1_73_0.tar.gz`
+에러 메세지에서 boost파일을 다운받기 권장하는 사이트는 Forbidden 되어 있기 때문에 "Sourceforge" 사이트에서 에러 메세지에 알맞는 버전의 boost 파일을 다운받으면 해결됩니다.
 
-`/usr/local/mysql/boost# tar xvfz https://sourceforge.net/projects/boost/files/boost/1.73.0/boost_1_73_0.tar.gz`
+`/usr/local/mysql/boost# wget https://sourceforge.net/projects/boost/files/boost/1.73.0/boost_1_73_0.tar.gz` <br>
+
+`/usr/local/mysql/boost# tar xvfz https://sourceforge.net/projects/boost/files/boost/1.73.0/boost_1_73_0.tar.gz` <br>
 
 ![sol](/assets/images/Back_End/cmake_error_sol.png) 
 
-그다음 `make`로 컴파일 하는 과정이 큰 관문이었습니다.
+그다음 `make`로 컴파일 하는 과정이 큰 관문이었습니다. <br>
 일단 컴파일 하는데 상당히 오랜시간이 소요되었고, 컴파일 [69%]에서 다음과 같은 오류가 발생하였습니다.
 
 ![kill_error](/assets/images/Back_End/signal_9_error.png) 
@@ -111,25 +113,26 @@ journal도 지워보고 swap공간도 늘려보고 vmware 세팅에서 디스크
 `make install`까지 성공적으로 설치할 수 있었습니다.
 
 ### MySQL 데이터베이스 초기화
+<br>
 
 **mysql 그룹 및 유저 생성**
 
-`# groupadd mysql`
-`# useradd -r -g mysql -s /bin/false mysql`
+`# groupadd mysql` <br>
+`# useradd -r -g mysql -s /bin/false mysql` <br>
 
 **mysql-files 디렉토리 생성**
 
-`/usr/local/# cd mysql`
-`/usr/local/mysql# mkdir mysql-files`
+`/usr/local/# cd mysql` <br>
+`/usr/local/mysql# mkdir mysql-files` <br>
 
 **권한 설정**
 
-> **chown** : change own, 파일의 소유권자 변경
+> **chown** : change own, 파일의 소유권자 변경 <br>
 > **chmod** : change mod, 파일과 디렉토리의 사용 권한 변경
 
-`/usr/local/mysql# chown -R mysql:mysql /usr/local/mysql`
-`/usr/local/mysql# chown mysql:mysql mysql-files`
-`/usr/local/mysql# chmod 750 mysql-files`
+`/usr/local/mysql# chown -R mysql:mysql /usr/local/mysql` <br>
+`/usr/local/mysql# chown mysql:mysql mysql-files` <br>
+`/usr/local/mysql# chmod 750 mysql-files` <br>
 
 **기본 데이터베이스 설정**
 
@@ -144,6 +147,7 @@ journal도 지워보고 swap공간도 늘려보고 vmware 세팅에서 디스크
 서버에 접속하기 위한 임시 비밀번호가 생성된 것을 볼 수 있습니다.
 
 ### 서버 실행 및 종료
+<br>
 
 **서버 실행**
 
@@ -178,12 +182,12 @@ journal도 지워보고 swap공간도 늘려보고 vmware 세팅에서 디스크
 
 ![kill_error](/assets/images/Back_End/server-end-check.png)
 
-ps -ef | grep mysqld 명령어로 서버가 종료된 것을 확인할 수 있습니다.
+`ps -ef | grep mysqld` 명령어로 서버가 종료된 것을 확인할 수 있습니다.
 
 ### Mysql service 등록
 
-`/usr/local/# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld`
-`/usr/local/# vi /etc/init.d/mysqld` 
+`/usr/local/# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld` <br>
+`/usr/local/# vi /etc/init.d/mysqld` <br>
 
 아래와 같이 basedir, datadir 뒤에 경로를 추가해 줍니다.
 
@@ -197,10 +201,10 @@ ps -ef | grep mysqld 명령어로 서버가 종료된 것을 확인할 수 있�
 
 service 명령어를 통해 간단하게 서버를 실행시키고 종료시킬 수 있습니다.
 
-`/usr/local# service mysql start`
-`/usr/local# service mysql stop`
-`/usr/local# service mysql restart`
-`/usr/local# service mysql status`
+`/usr/local# service mysql start` <br>
+`/usr/local# service mysql stop` <br>
+`/usr/local# service mysql restart` <br>
+`/usr/local# service mysql status` <br>
 
 나가기 위해서는 q를 입력하시면 됩니다.
 
