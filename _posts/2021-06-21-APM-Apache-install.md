@@ -5,8 +5,9 @@ category :
     - Back-End
 ---
 ### Virtual Box + Ubuntu 20.04 설치
-리눅스 환경에서 과제를 수행하기 위해 가상머신을 사용해야 했습니다.
-가상환경으로는 `VirtualBox`, 우분투는 20.04 버전을 다운받아 사용하였습니다. Mac OS 베이스 환경에서 작업을 하였고 VirtualBox와 우분투 다운로드 방법은 아래의 유튜브 링크를 참고해 주시면 되겠습니다. + $($우분투 이미지의 디스크 용량은 40GB 이상을 권장드립니다.)
+리눅스 환경에서 과제를 수행하기 위해 가상머신을 사용해야 했습니다.<br>
+가상환경으로는 `VirtualBox`, 우분투는 20.04 버전을 다운받아 사용하였습니다. <br>
+Mac OS 베이스 환경에서 작업을 하였고 VirtualBox와 우분투 다운로드 방법은 아래의 유튜브 링크를 참고해 주시면 되겠습니다. + $($우분투 이미지의 디스크 용량은 40GB 이상을 권장드립니다.)
 
 - [우분투, 버추얼 박스 설치 및 세팅](https://www.youtube.com/watch?v=Hzji7w882OY)
 
@@ -15,6 +16,7 @@ category :
 - 소스파일은 /usr/local/src 에 저장합니다.
 
 다음은 컴파일 설치를 위한 필수 패키지 입니다.<br>
+
 `$ sudo su` <br>
 `# apt-get install gcc zlib1g zlib1g-dev libssl-dev openssl libxml2-dev ncurses-dev` <br>
 

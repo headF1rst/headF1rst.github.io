@@ -15,6 +15,7 @@ category :
 ### MySQL 설치
 
 **1. MySQL 컴파일 설치를 위한 패키지 설치** <br>
+
 `$ sudo su` <br>
 `/usr/local# apt-get update` <br>
 `/usr/local# apt-get install cmake` <br>
@@ -25,9 +26,11 @@ category :
 [MySQL 의존성 패키지 설치 공식 문서](https://dev.mysql.com/doc/refman/8.0/en/source-installation-prerequisites.html)를 참고하였습니다.
 
 **2. MySQL Community Server 8.0.19 설치** <br>
+
 Apache 설치 과정과 마찬가지로 `wget`을 사용하여 mysql-8.0.19 압축 파일을 사이트로 부터 다운받은 다음 `tar xvfz`로 압축을 해제해 줍니다. <br>
 
 `/usr/local# wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.19.tar.gz` <br>
+
 `/usr/local# tar xvfz mysql-8.0.19.tar.gz` <br>
 
 **3. MySQL 설치**
@@ -187,6 +190,7 @@ journal도 지워보고 swap공간도 늘려보고 vmware 세팅에서 디스크
 ### Mysql service 등록
 
 `/usr/local/# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld` <br>
+
 `/usr/local/# vi /etc/init.d/mysqld` <br>
 
 아래와 같이 basedir, datadir 뒤에 경로를 추가해 줍니다.
