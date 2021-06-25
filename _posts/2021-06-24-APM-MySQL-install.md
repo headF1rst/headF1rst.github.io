@@ -11,8 +11,6 @@ category :
 - Ubuntu 20.04
 - Apache 2.4.46
 
-
-
 ### MySQL 설치
 
 **1. MySQL 컴파일 설치를 위한 패키지 설치**
