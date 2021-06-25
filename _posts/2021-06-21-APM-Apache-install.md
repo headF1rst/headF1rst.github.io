@@ -1,12 +1,12 @@
 ---
 toc : true
-title : "[Server] APM 컴파일 수동 설치하기 1/3 - Apache"
+title : "[Server] APM 컴파일 수동 설치하기 1/3 - Apache-2.4.46"
 category : 
     - Back-End
 ---
 ### Virtual Box + Ubuntu 20.04 설치
 리눅스 환경에서 과제를 수행하기 위해 가상머신을 사용해야 했습니다.
-가상환경으로는 `VirtualBox`, 우분투는 20.04 버전을 다운받아 사용하였습니다. Mac OS 베이스 환경에서 작업을 하였고 VirtualBox와 우분투 다운로드 방법은 아래의 유튜브 링크를 참고해 주시면 되겠습니다.
+가상환경으로는 `VirtualBox`, 우분투는 20.04 버전을 다운받아 사용하였습니다. Mac OS 베이스 환경에서 작업을 하였고 VirtualBox와 우분투 다운로드 방법은 아래의 유튜브 링크를 참고해 주시면 되겠습니다. + $($우분투 이미지의 디스크 용량은 40GB 이상을 권장드립니다.)
 
 - 우분투, 버추얼 박스 설치 및 세팅: https://www.youtube.com/watch?v=Hzji7w882OY
 
