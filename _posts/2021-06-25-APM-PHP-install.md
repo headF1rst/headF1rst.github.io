@@ -2,7 +2,7 @@
 toc : true
 title : "[Server] APM 컴파일 수동 설치하기 3/3 - PHP-7.4.1"
 category : 
-    - Back-End
+    - Back_End
 ---
 
 ### 환경

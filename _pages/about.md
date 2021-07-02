@@ -7,4 +7,12 @@ toc: true
 tags: [About]
 ---
 
-## Hello I'm Sanha Ko
+### 성장과정
+
+**Aoba Japan International school** 2011 ~ 2013
+
+**British School in Tokyo** 2013 ~ 2015
+
+**서울 영동 고등학교** 2015 ~ 2017
+
+**단국대학교 죽전 캠퍼스** 2017 ~ 

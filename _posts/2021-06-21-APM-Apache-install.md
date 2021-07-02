@@ -2,7 +2,7 @@
 toc : true
 title : "[Server] APM 컴파일 수동 설치하기 1/3 - Apache-2.4.46"
 category : 
-    - Back-End
+    - Back_End
 ---
 ### Virtual Box + Ubuntu 20.04 설치
 리눅스 환경에서 과제를 수행하기 위해 가상머신을 사용해야 했습니다.<br>
