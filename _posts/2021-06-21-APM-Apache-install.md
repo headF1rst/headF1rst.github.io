@@ -91,7 +91,7 @@ apr-util 설치 중 위와같은 에러가 발생하였고  libexpat1-dev 패키
 
 아파치 설치 <br>
 `# cd httpd-2.4.46` <br>
-`# ./configure --prefix=/usr/local/apache2 \` <br>
+`# ./configure --prefix=/usr/local/apache2.4 \` <br>
 `> --enable-module=so --enable-rewrite --enable-so \` <br>
 `> --with-apr=/usr/local/apr \` <br>
 `> --with-apr-util=/usr/local/apr-util \` <br>
