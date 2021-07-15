@@ -1,6 +1,6 @@
 ---
 toc : true
-title : "[Server] APM (Apache, PHP, Mysql) 이란?"
+title : "[Server] APM $($Apache, PHP, Mysql) 이란?"
 category : 
     - Back_End
 ---
@@ -9,7 +9,7 @@ APM 이란 하나의 소프트웨어를 특정 짓는 것이 아닌 웹 서버 �
 
 ### Apache $($웹 서버)
 
-![apache_image](/assets/images/Back_End/apache.png) 
+<center><img src = "/assets/images/Back_End/apache.png"></center>
 
 아파치는 클라이언트에게 웹 서비스를 제공해주는 웹 서버입니다.
 
@@ -21,7 +21,7 @@ APM 이란 하나의 소프트웨어를 특정 짓는 것이 아닌 웹 서버 �
 
 ### PHP $($웹 프로그래밍 언어)
 
-![php_image](/assets/images/Back_End/PHP-logo.svg)
+<center><img src = "/assets/images/Back_End/PHP-logo.svg" width="300" height="200"></center>
 
 PHP $($Personal Home Page)는 서버에서 실행되는 웹 프로그래밍 언어입니다. 
 
@@ -31,9 +31,9 @@ PHP는 서버에서 소스코드를 해석하여 HTML 코드로 만들어 브라
 
 ### MySQL $($데이터베이스)
 
-![mysql_image](/assets/images/Back_End/mysql_image.png)
+<center><img src = "/assets/images/Back_End/mysql_image.png" width="300" height="150"></center>
 
-MySQL은 가장 널리 쓰이고 있는 관계형 데이터베이스 관리 시스템입니다($Relational DBMS). 
+MySQL은 가장 널리 쓰이고 있는 관계형 데이터베이스 관리 시스템입니다$($Relational DBMS). 
 
 오픈소스 데이터베이스 이며 현재는 상업용인 MySQL과 무료 버전인 MariaDB로 나뉘어 집니다.
 

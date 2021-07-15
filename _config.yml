@@ -51,9 +51,9 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true
+search_full_content      : true
+search_provider          : lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Sanha Ko"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : /assets/images/blog_setting/avatar.png
   bio              : "평범한 대학생의 성장 일기"
   location         : "Seoul, South Korea"
   email            : "sanha0498@gmail.com"
@@ -275,8 +275,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
-      comments: # true
+      read_time: true
+      comments: true
       share: true
       related: true
 
