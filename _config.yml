@@ -61,7 +61,7 @@ algolia:
   powered_by             : # true (default), false
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
+  instant_search         : true
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Sanha Ko"
-  avatar           : /assets/images/blog_setting/avatar.png
+  avatar           : /assets/images/blog_setting/avatar.jpeg
   bio              : "평범한 대학생의 성장 일기"
   location         : "Seoul, South Korea"
   email            : "sanha0498@gmail.com"
@@ -275,7 +275,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       comments: true
       share: true
       related: true
