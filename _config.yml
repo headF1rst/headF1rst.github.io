@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Sanha Ko"
-  avatar           : /assets/images/blog_setting/avatar.jpeg
+  avatar           : "/assets/images/blog_setting/avatar.jpeg"
   bio              : "평범한 대학생의 성장 일기"
   location         : "Seoul, South Korea"
   email            : "sanha0498@gmail.com"
