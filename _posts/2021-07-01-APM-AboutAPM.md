@@ -5,7 +5,9 @@ category :
     - Back_End
 ---
 
-APM 이란 하나의 소프트웨어를 특정 짓는 것이 아닌 웹 서버 구축을 위한 Apache, Php, Mysql을 의미하는 것입니다. 물론 APM $($Application Performance Management)와 같은 다른 의미의 APM도 존재하지만 여기서는 전자의 의미에 대해 다뤄보겠습니다.
+APM 이란 하나의 소프트웨어를 특정 짓는 것이 아닌 웹 서버 구축을 위한 Apache, Php, Mysql을 의미하는 것입니다. 
+
+물론 APM $($Application Performance Management)과 같은 다른 의미의 APM도 존재하지만 여기서는 전자의 의미에 대해서 다뤄보겠습니다.
 
 ### Apache $($웹 서버)
 
