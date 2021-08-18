@@ -1,6 +1,7 @@
 ---
 toc : true
-title : "[rocksDB Operation] Compaction in rocksDB"
+title : "[rocksDB] rocksDB의 소개와 구조"
 category : 
     - rocksDB
 ---
+### rocksDB란?
