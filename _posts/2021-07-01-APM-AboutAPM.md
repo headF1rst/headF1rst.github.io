@@ -56,4 +56,4 @@ MySQL은 가장 널리 쓰이고 있는 관계형 데이터베이스 관리 시�
 
 **6. 아파치는 HTML파일을 클라이언트 측의 웹브라우저에 전달한다.**
 
-<center><img src = "/assets/images/Back_End/apmWorkflow.png" width="650" height="550"></center>
+<center><img src = "/assets/images/Back_End/apmWorkflow.png" width="750" height="650"></center>
