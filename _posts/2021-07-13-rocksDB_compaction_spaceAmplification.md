@@ -40,7 +40,7 @@ SSD와 같은 fast storage가 발전함에 따라 어플리케이션과 DB 서�
 
 하위 level로 내려 갈수록 넓어지는 트리 형태의 구조로 이루어져 있습니다.
 
-![LMS-tree](/assets/images/rocksDB/LMS.jpeg) 
+<center><img src = "/assets/images/rocksDB/LMS.jpeg" width="450" height="300"></center>
 
 <br>
 
@@ -49,7 +49,6 @@ SSD와 같은 fast storage가 발전함에 따라 어플리케이션과 DB 서�
 Key와 value는 임의의 byte stream으로 이루어져 있습니다. Key, value의 크기에는 제한이 없으며 `put`, `get`, `iterator(range scan)`, `delete`, `single delete` ... 등의 사용자 인터페이스를 통해 key-value값의 연산이 가능합니다.
 
 **rocksDB 내부 연산**
-<br>
 
 - Flush
 - Compaction
@@ -79,10 +78,9 @@ Key와 value는 임의의 byte stream으로 이루어져 있습니다. Key, valu
 
 <br>
 
-![LMS-tree](/assets/images/rocksDB/getPutWorkload.jpeg) 
+<center><img src = "/assets/images/rocksDB/getPutWorkload.jpeg" width="450" height="300"></center>
 
 ### Compaction workload
-<br>
 
 - put$($"7", "R")
 
@@ -104,7 +102,7 @@ Key와 value는 임의의 byte stream으로 이루어져 있습니다. Key, valu
 
 L0에는 중복된 key값이 존재할 수 있지만 L1 ~ Lmax 에는 sstable간의 중복된 key값은 존재할 수 없다.
 
-![LMS-tree](/assets/images/rocksDB/compactionWorkload.jpeg) 
+<center><img src = "/assets/images/rocksDB/compactionWorkload.jpeg" width="450" height="300"></center>
 
 ### Bloom filter를 통한 데이터 읽기
 
@@ -113,3 +111,8 @@ L0에는 중복된 key값이 존재할 수 있지만 L1 ~ Lmax 에는 sstable간
 하지만 데이터를 찾을때 마다 이러한 과정을 거치게 된다면 불필요한 read 연산을 반복하게 됩니다.`(read amplification)`
 
 이때 Bloom filter를 적용하게 되면 데이터가 정렬되있다는 특성을 활용하여 sstable에 원하는 key값의 존재여부를 빠르게 파악하는것이 가능합니다.
+
+>Reference <br>
+[rocksDB wiki](https://github.com/facebook/rocksdb/wiki)
+<br>
+단국대학교 소프트웨어학과 최종무 교수님 강의자료
