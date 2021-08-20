@@ -40,7 +40,7 @@ SSD와 같은 fast storage가 발전함에 따라 어플리케이션과 DB 서�
 
 하위 level로 내려 갈수록 넓어지는 트리 형태의 구조로 이루어져 있습니다.
 
-<center><img src = "/assets/images/rocksDB/LMS.jpeg" width="450" height="300"></center>
+<center><img src = "/assets/images/rocksDB/LMS.jpeg" width="650" height="550"></center>
 
 <br>
 
@@ -76,8 +76,6 @@ Key와 value는 임의의 byte stream으로 이루어져 있습니다. Key, valu
 
 - get(1), get(2), get(3). 최근 데이터 일수록 상위 level에 존재
 
-<br>
-
 <center><img src = "/assets/images/rocksDB/getPutWorkload.jpeg" width="450" height="300"></center>
 
 ### Compaction workload
@@ -102,7 +100,7 @@ Key와 value는 임의의 byte stream으로 이루어져 있습니다. Key, valu
 
 L0에는 중복된 key값이 존재할 수 있지만 L1 ~ Lmax 에는 sstable간의 중복된 key값은 존재할 수 없다.
 
-<center><img src = "/assets/images/rocksDB/compactionWorkload.jpeg" width="450" height="300"></center>
+<center><img src = "/assets/images/rocksDB/compactionWorkload.jpeg" width="650" height="550"></center>
 
 ### Bloom filter를 통한 데이터 읽기
 
@@ -111,6 +109,8 @@ L0에는 중복된 key값이 존재할 수 있지만 L1 ~ Lmax 에는 sstable간
 하지만 데이터를 찾을때 마다 이러한 과정을 거치게 된다면 불필요한 read 연산을 반복하게 됩니다.`(read amplification)`
 
 이때 Bloom filter를 적용하게 되면 데이터가 정렬되있다는 특성을 활용하여 sstable에 원하는 key값의 존재여부를 빠르게 파악하는것이 가능합니다.
+
+<br>
 
 >Reference <br>
 [rocksDB wiki](https://github.com/facebook/rocksdb/wiki)
