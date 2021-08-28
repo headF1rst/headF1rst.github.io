@@ -75,5 +75,7 @@ kByCompensatedSize의 쓰기증폭을 30% 개선시켜줍니다.
 
 ![kill_error](/assets/images/rocksDB/minOverlappingRatio.png) 
 
-
-
+>Reference <br>
+https://github.com/facebook/rocksdb/wiki/Leveled-Compaction
+<br>
+https://rocksdb.org/blog/2016/01/29/compaction_pri.html
