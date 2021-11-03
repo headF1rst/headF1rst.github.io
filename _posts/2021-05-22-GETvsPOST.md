@@ -2,7 +2,7 @@
 toc : true
 title : "[Network] GET method VS POST method"
 category : 
-    - 컴퓨터네트워크
+    - CS
 ---
 
 client가 서버에 정보를 보내는 방법에는 크게 GET과 POST, 이 두가지 방법이 있습니다. 둘다 데이터를 서버에 보내준다는 공통점이 있지만 다른 장단점도 존재하기 때문에 상황에 맞는 적절한 method를 선택하여야 합니다.

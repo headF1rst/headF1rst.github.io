@@ -2,7 +2,6 @@
 toc : true
 title : "[Algorithm] lower_bound, upper_bound 활용"
 category : 
-    - TIL
     - Algorithm
 ---
 c++의 algorithm 헤더파일은 이진 탐색으로 원소를 탐색하는 `lower_bound`와 `upper_bound` 함수를 제공합니다.

@@ -2,7 +2,7 @@
 toc : true
 title : "[Network] Socket programming - 영화관 예약 시스템"
 category : 
-    - 컴퓨터네트워크
+    - CS
 ---
 ### 영화관 예약 시스템 만들기
 

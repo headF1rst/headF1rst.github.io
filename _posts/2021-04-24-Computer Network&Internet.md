@@ -2,7 +2,7 @@
 toc : true
 title : "[Network] Computer Network & Internet"
 category : 
-    - 컴퓨터네트워크
+    - CS
 ---
 ### 네트워크란?
 네트워크란 Net + Work의 합성어로써 두대 이상의 컴퓨터들을 연결하고 서로 통신하며 자원을 공유하는것을 말합니다.

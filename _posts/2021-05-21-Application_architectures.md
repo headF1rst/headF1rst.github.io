@@ -2,7 +2,7 @@
 toc : true
 title : "[Network] Application architectures"
 category : 
-    - 컴퓨터네트워크
+    - CS
 ---
 
 Application architecture에는 예전부터 사용해 오던 client server architecture와 pc와 n/w에 향상이 있는 peer-to-peer $($P2P) architecture, 그리고 두 모델의 Hybrid 형태가 존재합니다.

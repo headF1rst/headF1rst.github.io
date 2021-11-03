@@ -2,7 +2,6 @@
 toc: true
 title: "[STL] 연결 리스트 Linked-list"
 category: 
-    - TIL
     - STL
 ---
 오늘은 데이터를 순차적으로 저장하는데 사용되는 자료구조인 연결 리스트에 대해서 알아보겠습니다.

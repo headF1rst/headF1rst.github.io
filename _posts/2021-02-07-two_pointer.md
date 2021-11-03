@@ -2,7 +2,6 @@
 toc : true
 title : "[Algorithm] 투 포인터"
 category :
-    - TIL
     - Algorithm
 ---
 `투 포인터 알고리즘`이란 1차원 배열의 각기 다른 원소를 가리키는 두개의 포인터를 조작해가며 원하는 값을 얻는 알고리즘을 말합니다.

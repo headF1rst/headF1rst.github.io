@@ -2,7 +2,6 @@
 toc: true
 title: "[C++] Undefined behavior $($cout과 printf의 출력 순서)"
 category: 
-    - TIL
     - C++
 ---
 오늘은 C++의 Undefined behavior와 Unspecified behavior에 의한 결과 값의 차이를 알아보겠습니다.
