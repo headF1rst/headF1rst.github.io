@@ -36,4 +36,61 @@ category :
 
 - 서버 가상화 : 하나의 물리적 서버 호스트에서 여러 개의 서버 운영체제를 게스트로 실행할 수 있게 해주는 소프트웨어 아키텍쳐.
 
-![서버 가상화]()
+![서버 가상화](https://i2.wp.com/thinkground.studio/wp-content/uploads/2019/04/190414_Hosted-Virtualization-Architecture.png?resize=768%2C716&ssl=1)
+
+위의 그림을 보면 하나의 Host OS에 여러개의 Guest OS가 할당된 것을 볼 수 있다.
+
+이러한 서버 가상화를 가능하게 하는것이 바로 Virtual Machine Monitor $($VMM) 기술이다. $($VMM은 **하이퍼바이저**라고도 부른다.)
+
+**Virtual Machine Monitor**
+
+VMM은 가상화 기술을 통해 하나의 Host OS에서 여러개의 Guest OS를 생성해서 사용할 수 있게 해주는 소프트웨어다.
+
+이렇게 생성된 여러개의 Guest OS는 가상머신 단위로 구분되고 각 가상머신에는 여러 운영체제가 설치되어 사용된다. 또한 각 Guest OS는 다른 Guest OS와 완전히 독립된 공간과 시스템 자원을 지원받게 된다.
+
+**서버가상화의 단점**
+
+서버 가상화에서 각종 시스템 자원을 가상화 하고 독립된 공간을 매번 할당해주는 가상화 작업은 반드시 VMM을 거쳐서 이루어 져야 한다. 때문에 일반 호스트에 비해 성능 손실이 발생한다.
+
+게다가 가상머신에는 Guest OS를 사용하기 위한 라이브러리와 커널을 모두 포함하고 있기 때문에 배포를 위한 이미지로 만들었을때 이미지 크기가 너무 커지는 단점이 존재한다.
+
+**총 정리 - 가상머신 Tradeoff:**
+
+Pros
+
+- 완벽히 독립된 운영체제를 생성할 수 있다.
+
+Cons
+
+- 성능이 느리다, 용량이 크다.
+
+### 컨테이너란?
+
+컨테이너는 가상화 공간을 만들기 위해 리눅스 자체 기능인 "chroot, namespace, cgroup"을 사용함으로써 프로세스 단위의 독립된 공간을 만든다.
+
+![container](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b968b00f-d1a4-4c1b-a987-b3b286ac7c41/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-11-03_%EC%98%A4%ED%9B%84_4.54.07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211128T144833Z&X-Amz-Expires=86400&X-Amz-Signature=79cb825ba4e2e1f282d159f885a3588700ed7ccc7d71beb1cc4cdf480cf7c826&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7%25202021-11-03%2520%25EC%2598%25A4%25ED%259B%2584%25204.54.07.png%22&x-id=GetObject)
+
+컨테이너 엔진 $($Docker engine)위에 컨테이너들이 할당 되었으며 별도의 Guest OS가 사용되지 않은것을 확인 할 수 있다.
+
+이러한 컨테이너는 어플리케이션 구동에 필요한 라이브러리와 실행 파일만이 존재한다.
+
+때문에 배포를 위한 이미지로 만들었을 때 이미지의 용량 또한 가상머신에 비해 크게 줄어들며 배포 시간이 빨라지고 가상화된 공간을 사용했을 때의 성능 손실도 거의 없다는 장점이 있다.
+
+$($컨테이너 엔진 기술은 Docker만의 기술이 아니라 다른 회사도 존재한다.)
+
+컨테이너의 기술적 의미를 조금 더 알아보자면 이미지의 목적에 따라 생성되는 프로세스 단위의 격리 환경을 제공하며 각 프로세스의 생명 주기를 관리하는 역할을 한다.
+
+SpringBoot 1개와 nginx 1개를 컨테이너에서 실행하는 경우를 예로 들어보자.
+
+![process](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/22b43b23-0fe2-4718-a236-f63f8e30b979/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-11-03_%EC%98%A4%ED%9B%84_6.05.03.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211128T145312Z&X-Amz-Expires=86400&X-Amz-Signature=f889bc092af55e7128ab9b290ad11f1fd9eab3bf7e7fb8b44e9653e49db875d0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7%25202021-11-03%2520%25EC%2598%25A4%25ED%259B%2584%25206.05.03.png%22&x-id=GetObject)
+
+Springboot와 nginx가 독립된 가상공간에 할당된 것을 확인할 수 있다.
+
+컨테이너가 실행되면 프로세스가 실행되는데 필요한 자원들을 커널을 통해 가져오고 프로세스를 실행하게 된다.
+
+이때 프로세스는 OS 위에서 실행되며 OS는 이때 컨테이너를 프로세스로 바라보게 된다.
+
+때문에 Springboot 어플리케이션 프로세스를 직접 실행하나, 컨테이너로 실행하나 Host OS 입장에서는 똑같은 프로세스로 취급하게 된다.
+
+덕분에 컨테이너는 프로세스를 Host OS와 격리된 환경에서 관리하며 독립된 개발 환경을 보장해 준다. 뿐만 아니라 프로세스를 컨테이너 단위로 바라볼 수 있게 되고 프로세스의 관리, 확장이 편리해진다.
+
