@@ -68,7 +68,7 @@ Cons
 
 컨테이너는 가상화 공간을 만들기 위해 리눅스 자체 기능인 "chroot, namespace, cgroup"을 사용함으로써 프로세스 단위의 독립된 공간을 만든다.
 
-![container](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b968b00f-d1a4-4c1b-a987-b3b286ac7c41/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-11-03_%EC%98%A4%ED%9B%84_4.54.07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211128T144833Z&X-Amz-Expires=86400&X-Amz-Signature=79cb825ba4e2e1f282d159f885a3588700ed7ccc7d71beb1cc4cdf480cf7c826&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7%25202021-11-03%2520%25EC%2598%25A4%25ED%259B%2584%25204.54.07.png%22&x-id=GetObject)
+![container](/assets/images/Back_End/container.png)
 
 컨테이너 엔진 $($Docker engine)위에 컨테이너들이 할당 되었으며 별도의 Guest OS가 사용되지 않은것을 확인 할 수 있다.
 
@@ -82,7 +82,7 @@ $($컨테이너 엔진 기술은 Docker만의 기술이 아니라 다른 회사�
 
 SpringBoot 1개와 nginx 1개를 컨테이너에서 실행하는 경우를 예로 들어보자.
 
-![process](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/22b43b23-0fe2-4718-a236-f63f8e30b979/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-11-03_%EC%98%A4%ED%9B%84_6.05.03.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211128T145312Z&X-Amz-Expires=86400&X-Amz-Signature=f889bc092af55e7128ab9b290ad11f1fd9eab3bf7e7fb8b44e9653e49db875d0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7%25202021-11-03%2520%25EC%2598%25A4%25ED%259B%2584%25206.05.03.png%22&x-id=GetObject)
+![process](/assets/images/Back_End/dockerProccess.png)
 
 Springboot와 nginx가 독립된 가상공간에 할당된 것을 확인할 수 있다.
 
@@ -94,3 +94,24 @@ Springboot와 nginx가 독립된 가상공간에 할당된 것을 확인할 수 
 
 덕분에 컨테이너는 프로세스를 Host OS와 격리된 환경에서 관리하며 독립된 개발 환경을 보장해 준다. 뿐만 아니라 프로세스를 컨테이너 단위로 바라볼 수 있게 되고 프로세스의 관리, 확장이 편리해진다.
 
+그렇다면 컨테이너는 어떻게 관리할 수 있을까?
+
+앞에서 지나쳤던 그림에 컨테이너 엔진이 포함되어 있었습니다.
+
+컨테이너 엔진, 혹은 도커엔진은 유저가 컨테이너를 쉽게 관리할 수 있게 해주는 주체이다.
+
+### Container Engine 이란?
+
+컨테이너 엔진의 역할로는
+
+- 컨테이너 관리
+
+- 이미지 관리
+
+- 불륨 관리
+
+- 네트워크 관리
+
+등이 있으며 컨테이너의 라이프 사이클을 관리하며 컨테이너를 생성하기 위한 이미지 관리, 
+컨테이너의 데이터를 저장하기 위한 저장소 역할을 하는 볼륨의 관리, 
+컨테이너의 접속을 관리하기 위한 네트워크 관리 등의 기능을 제공한다.
