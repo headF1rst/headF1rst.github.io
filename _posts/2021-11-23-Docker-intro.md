@@ -36,7 +36,9 @@ category :
 
 - 서버 가상화 : 하나의 물리적 서버 호스트에서 여러 개의 서버 운영체제를 게스트로 실행할 수 있게 해주는 소프트웨어 아키텍쳐.
 
-![서버 가상화](https://i2.wp.com/thinkground.studio/wp-content/uploads/2019/04/190414_Hosted-Virtualization-Architecture.png?resize=768%2C716&ssl=1)
+<center><img src = "https://i2.wp.com/thinkground.studio/wp-content/uploads/2019/04/190414_Hosted-Virtualization-Architecture.png?resize=768%2C716&ssl=1" width="300" height="250"></center>
+
+<small> 이미지 출처 - https://thinkground.studio/%ED%98%B8%EC%8A%A4%ED%8A%B8%ED%98%95-%EC%84%9C%EB%B2%84-%EA%B0%80%EC%83%81%ED%99%94hosted-virtualization-architecture/ </small>
 
 위의 그림을 보면 하나의 Host OS에 여러개의 Guest OS가 할당된 것을 볼 수 있다.
 
@@ -68,7 +70,9 @@ Cons
 
 컨테이너는 가상화 공간을 만들기 위해 리눅스 자체 기능인 "chroot, namespace, cgroup"을 사용함으로써 프로세스 단위의 독립된 공간을 만든다.
 
-![container](/assets/images/Back_End/container.png)
+<center><img src = "/assets/images/Back_End/container.png" width="350" height="300"></center>
+
+<small> 이미지 출처 - https://www.netapp.com/blog/containers-vs-vms/ </small>
 
 컨테이너 엔진 $($Docker engine)위에 컨테이너들이 할당 되었으며 별도의 Guest OS가 사용되지 않은것을 확인 할 수 있다.
 
@@ -82,7 +86,7 @@ $($컨테이너 엔진 기술은 Docker만의 기술이 아니라 다른 회사�
 
 SpringBoot 1개와 nginx 1개를 컨테이너에서 실행하는 경우를 예로 들어보자.
 
-![process](/assets/images/Back_End/dockerProccess.png)
+<center><img src = "/assets/images/Back_End/dockerProccess.png" width="350" height="300"></center>
 
 Springboot와 nginx가 독립된 가상공간에 할당된 것을 확인할 수 있다.
 
