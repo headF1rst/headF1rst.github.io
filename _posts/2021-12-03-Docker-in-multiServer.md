@@ -42,7 +42,7 @@ Scale Out 또한 지원하지만 기존의 Scale Out과는 다르게 개발자�
 
 스웜은 도커 엔진 자체에 내장되어있다.
 
-<center><img src = "https://i2.wp.com/www.docker.com/blog/wp-content/uploads/2018/11/DockerEngineDiagram-1.png?resize=505%2C395&ssl=1" width="350" height="300"></center>
+![Docker Engine](https://i2.wp.com/www.docker.com/blog/wp-content/uploads/2018/11/DockerEngineDiagram-1.png?resize=505%2C395&ssl=1)
 
 <small> 이미지 출처 - https://www.docker.com/blog/introducing-docker-engine-18-09/ </small>
 
@@ -50,7 +50,7 @@ Scale Out 또한 지원하지만 기존의 Scale Out과는 다르게 개발자�
 
 ### 3-1. 스웜 모드의 구조
 
-<center><img src = "https://lh3.googleusercontent.com/rogE9gX_NWwfrpMRSdHhVNRgC5a_qnRbNDWPbC_TBwkBaxoOYUL_2cNJgSh_z0fTJG3c8mLwp-dtiopoowH05pTlRvhjwkGD_wI9u35dO6Zjj49kmWkEsTKPDI2o6fO6iQ=s800" width="300" height="300"></center>
+![Docker Swarm](https://lh3.googleusercontent.com/rogE9gX_NWwfrpMRSdHhVNRgC5a_qnRbNDWPbC_TBwkBaxoOYUL_2cNJgSh_z0fTJG3c8mLwp-dtiopoowH05pTlRvhjwkGD_wI9u35dO6Zjj49kmWkEsTKPDI2o6fO6iQ=s800)
 
 <small>이미지 출처 - https://docs.google.com/document/d/1x9EHhj_cwuZGY0W6aPXlETUZ5PIJ4czXXtXA-rSu9ts/mobilebasic</small>
 
@@ -107,7 +107,7 @@ $($단, 매니저 노드가 다운된다면 클러스터 자체가 사라지게 
 
 ## 4. 도커 컴포즈
 
-<center><img src = https://blog.kakaocdn.net/dn/cge4Op/btq6hUe8Ek8/wKGmt9nG4chedg72LD3La0/img.jpg
+<center><img src = "https://blog.kakaocdn.net/dn/cge4Op/btq6hUe8Ek8/wKGmt9nG4chedg72LD3La0/img.jpg"
  width="300" height="350"></center>
 
 도커 컴포즈는 여러개의 컨테이너를 하나의 서비스로 정의하고 실행한다.

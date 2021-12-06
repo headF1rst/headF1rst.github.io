@@ -5,16 +5,18 @@ category :
     - DevOps
 ---
 
+## 목차
 - VM vs Container
 - What is swarms
 - What is volume
 - What is docker compose
 
-### Docker란?
+## 1. Docker란?
 컨테이너 기반 가상화 도구이다.
 
-### 가상화란?
-**가상화개념 등장배경**
+## 가상화란?
+
+### 1-1. 가상화개념 등장배경
 
 ![Server-Image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDcG0TtA23AezEeiHhkl-17fuVmbNdW58KYXINpJjkvZkwHN02x4Z0shwhtP-BwbnUI6U&usqp=CAU)
 
@@ -33,7 +35,7 @@ category :
 
 가상화를 통해 사용자가 많은 서비스에는 서버 자원을 더 많이 할당해주고, 적은 서비스에는 적게 할당해 줘서 서버를 더 효율적으로 관리할 수 있게 됩니다.
 
-**가상화의 종류**
+### 1-2. 가상화의 종류
 
 - 서버 가상화 : 하나의 물리적 서버 호스트에서 여러 개의 서버 운영체제를 게스트로 실행할 수 있게 해주는 소프트웨어 아키텍쳐.
 
@@ -45,19 +47,19 @@ category :
 
 이러한 서버 가상화를 가능하게 하는것이 바로 Virtual Machine Monitor $($VMM) 기술이다. $($VMM은 **하이퍼바이저**라고도 부른다.)
 
-**Virtual Machine Monitor**
+#### 1-3. Virtual Machine Monitor
 
 VMM은 가상화 기술을 통해 하나의 Host OS에서 여러개의 Guest OS를 생성해서 사용할 수 있게 해주는 소프트웨어다.
 
 이렇게 생성된 여러개의 Guest OS는 가상머신 단위로 구분되고 각 가상머신에는 여러 운영체제가 설치되어 사용된다. 또한 각 Guest OS는 다른 Guest OS와 완전히 독립된 공간과 시스템 자원을 지원받게 된다.
 
-**서버가상화의 단점**
+#### 1-4. 서버가상화의 단점
 
 서버 가상화에서 각종 시스템 자원을 가상화 하고 독립된 공간을 매번 할당해주는 가상화 작업은 반드시 VMM을 거쳐서 이루어 져야 한다. 때문에 일반 호스트에 비해 성능 손실이 발생한다.
 
 게다가 가상머신에는 Guest OS를 사용하기 위한 라이브러리와 커널을 모두 포함하고 있기 때문에 배포를 위한 이미지로 만들었을때 이미지 크기가 너무 커지는 단점이 존재한다.
 
-**총 정리 - 가상머신 Tradeoff:**
+#### 총 정리 - 가상머신 Tradeoff:
 
 Pros
 
@@ -67,7 +69,7 @@ Cons
 
 - 성능이 느리다, 용량이 크다.
 
-### 컨테이너란?
+## 2. 컨테이너란?
 
 컨테이너는 가상화 공간을 만들기 위해 리눅스 자체 기능인 "chroot, namespace, cgroup"을 사용함으로써 프로세스 단위의 독립된 공간을 만든다.
 
@@ -105,7 +107,7 @@ Springboot와 nginx가 독립된 가상공간에 할당된 것을 확인할 수 
 
 컨테이너 엔진, 혹은 도커엔진은 유저가 컨테이너를 쉽게 관리할 수 있게 해주는 주체이다.
 
-### Container Engine 이란?
+## 3. Container Engine 이란?
 
 컨테이너 엔진의 역할로는
 
