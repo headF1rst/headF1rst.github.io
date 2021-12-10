@@ -39,7 +39,7 @@ category :
 
 - 서버 가상화 : 하나의 물리적 서버 호스트에서 여러 개의 서버 운영체제를 게스트로 실행할 수 있게 해주는 소프트웨어 아키텍쳐.
 
-<center><img src = "https://i2.wp.com/thinkground.studio/wp-content/uploads/2019/04/190414_Hosted-Virtualization-Architecture.png?resize=768%2C716&ssl=1" width="300" height="250"></center>
+<center><img src = "https://i2.wp.com/thinkground.studio/wp-content/uploads/2019/04/190414_Hosted-Virtualization-Architecture.png?resize=768%2C716&ssl=1" width="400" height="300"></center>
 
 <small> 이미지 출처 - https://thinkground.studio/%ED%98%B8%EC%8A%A4%ED%8A%B8%ED%98%95-%EC%84%9C%EB%B2%84-%EA%B0%80%EC%83%81%ED%99%94hosted-virtualization-architecture/ </small>
 
