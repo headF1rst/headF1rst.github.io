@@ -231,7 +231,109 @@ class Thread1 implements Runnable {
 isInterrupted() : true    
 2
 1
-카운트가 종료되었습니다.         < - interrupted에 의해 카운트가 종료되지 않았다.
+카운트가 종료되었습니다.         < - interrupt에 의해 카운트가 종료되지 않았다.
+```
+
+우리의 예상과 달리 `interrupt()`에 의해 카운트가 종료되지 않았다.
+
+이는 쓰레드가 `sleep()`에 의해 잠들어있을때 `interrupt()`가 호출되면 interrupted 상태를 `true`로 변경하지만 interrupt$($)에 의해 깨어난 sleep$($)에서 **InterruptedException**을 던지고, 이는 interrupted 상태를 **false**로 초기화 하기 때문이다.
+
+때문에 의도한 결과를 얻으려면 예외 처리 catch구문에 주석과 같이 interrupt를 통해 interrupted상태를 다시 true로 초기화 해주어야 한다.
+
+### suspend(), resume(), stop()
+
+> suspend$($) : 쓰레드를 멈추게 한다.
+> resume$($) : suspend된 쓰레드를 실행대기 상태로 바꾼다.
+> stop$($) : 쓰레드를 종료시킨다.
+
+위 메서드들은 교착상태$($DeadLock)을 일으키기 쉽기 때문에 사용이 권장되지 않는다. $($Deprecated)
+
+때문에 다음과 같이 오버라이딩을 하여 구현한다.
+
+#### 예시
+
+```java
+class Example {
+    public static void main(String[] args) {
+        Thread1 th1 = new Thread1("*");
+        Thread1 th2 = new Thread1("**");
+        Thread1 th3 = new Thread1("***");
+
+        th1.start();
+        th2.start();
+        th3.start();
+
+        try {
+            Thread.sleep(2000);
+            th1.suspend();
+            Thread.sleep(2000);
+            th2.suspend();
+            Thread.sleep(3000);
+            th1.resume();
+            Thread.sleep(3000);
+            th1.stop();
+            th2.stop();
+            Thread.sleep(2000);
+            th3.stop();
+        } catch (InterruptedException e) { }
+    }
+}
+
+class Thread1 implements Runnable {
+    volatile boolean suspended = false;
+    volatile boolean stopped = false;
+
+    Thread th;
+
+    Thread1(String name) {
+        // Thread(Runnable r, String name)
+        th = new Thread(this, name);
+    }
+
+    public void run() {
+        while(!stopped) {
+            if(!suspended) {
+                System.out.println(Thread.currentThread().getName());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) { }
+            }
+        }
+        System.out.println(Thread.currentThread().getName() + " - stopped");
+    }
+
+    public void suspend() { suspended = true; }
+    public void resume() { suspended = false; }
+    public void stop() { stopped = true; }
+    public void start() { th.start(); }
+}
+```
+**출력**
+```
+*
+**
+***
+***
+**
+*
+***
+**
+**
+***
+***
+***
+***
+*
+***
+*
+***
+*
+***
+** - stopped
+* - stopped
+***
+***
+*** - stopped
 ```
 
 
