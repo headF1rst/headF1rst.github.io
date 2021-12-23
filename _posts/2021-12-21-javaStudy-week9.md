@@ -149,9 +149,9 @@ Thread-1
 
 ![쓰레드 상태](/assets/images/Back_End/threadstatus.png)
 
-### sleep(long millis)
+### sleep$($long millis)
 
-> sleep(long millis, int nanos)
+> sleep$($long millis, int nanos)
 
 쓰레드를 지정시간동안 일시정지 시킨다.
 
@@ -341,10 +341,10 @@ class Thread1 implements Runnable {
 ## 쓰레드의 우선순위
 쓰레드의 `priority`속성값을 변경하여 특정 쓰레드가 더 많은 수행시간을 부여받도록 할 수 있다.
 
-> void setPriority(int newPriority) 
+> void setPriority$($int newPriority) 
 쓰레드의 우선순위를 지정한 값으로 변경하는 메서드.
 
-> int getPriority()
+> int getPriority$($)
 쓰레드의 우선순위를 반환하는 메서드.
 
 우선순위 범위 : 1 ~ 10
