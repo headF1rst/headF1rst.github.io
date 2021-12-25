@@ -336,7 +336,41 @@ class Thread1 implements Runnable {
 *** - stopped
 ```
 
+### yield$($)
+`yield()`가 호출되면 자신에게 남은 수행시간을 포기하고 실행대기 상태가된다.
 
+```java
+while(!stopped) {
+    if(!suspended) {
+        ...
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) { }
+    } else {
+        Thread.yield();
+    }
+} // while
+```
+
+만약 suspended == true 이고 `else {Thread.yield;}` 문이 생략되어 있었다면 쓰레드는 while문을 의미없이 돌면서 `busy-waiting`상태에 빠지게 될것이다.
+
+`Thread.yield()`를 통해 while문에서 시간을 낭비하지 않고 다른 쓰레드에게 양보하므로 코드가 더 효율적이게 된다.
+
+### join$($)
+
+```java
+try {
+    th1.join() // 현재 실행중인 쓰레드가 쓰레드 th1의 작업이 끝날때까지 기다린다.
+} catch (InterruptedException e) {}
+```
+
+- 작업중에 다른 쓰레드의 작업이 먼저 수행되어야할 필요가 있을때 사용.
+
+- interrupt$($)에 의해 대기상태에서 벗어날 수 있다.
+
+- 깨어날때 InterruptedException 발생
+
+- static 메서드가 아니다.
 
 ## 쓰레드의 우선순위
 쓰레드의 `priority`속성값을 변경하여 특정 쓰레드가 더 많은 수행시간을 부여받도록 할 수 있다.
