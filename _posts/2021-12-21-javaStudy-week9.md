@@ -546,7 +546,7 @@ public void withdraw(int money) {
 
 > **wait$($) :** 객체의 lock을 반납하고 쓰레드를 해당 객체의 waiting pool에 넣는다.
 
-> **notify$($) :** waiting pool에 대기중인 임의의 쓰레드 하나를 깨운다.
+> **notify$($) :** waiting pool에 대기중인 임의의 쓰레드 하나를 깨운다. <br>
 > **notifyAll$($) :** waiting pool에 대기중인 모든 쓰레드를 깨운다.
 
 은행 입출금 예제를 통해 wait, notify에 대해 알아보겠다.
@@ -572,6 +572,73 @@ class Account {
     public synchronized void deposit(int money) {
         balance += money;
         notify(); // 대기중인 임의의 쓰레드 하나를 깨움.
+    }
+}
+```
+
+notify$($)를 사용해서 하나의 임의의 쓰레드를 깨우게 되면 최악의 경우 어느 한 쓰레드는 오랫동안 깨어나지 못하는 **Starvation** 현상이 발생할 수 있다.
+
+이를 해결하고자 보통 notifyAll$($)을 사용하지만 이러한 경우 starvation은 막았지만 한번에 깨어난 여러 쓰레드가 lock을 얻기 위해 서로 경쟁하는 **Race condition**이 발생하게 된다.
+
+때문에 쓰레드 간의 선별적인 통지가 이루어지는것이 필요하고 자바에서 제공하는 lock클래스인 **Lock**과 **Condition**을 사용하여 해결 가능하다.
+
+### ReentrantLock
+**생성자**
+
+> **ReentrantLock$($)** <br>
+> **ReentrantLock$($boolean fair)**
+
+매개변수 `fair`에 `true`를 주게되면 가장 오래 기다린 쓰레드가 lock을 획득한다.
+
+하지만 가장 오래 기다린 쓰레드를 찾는 과정 떄문에 성능저하가 발생한다.
+
+`ReentrantLock`은 synchronized 블럭과 달리 메서드를 호출하여 수동으로 lock을 잠그고 해제해야 한다.
+
+> **void lock$($)**     lock을 잠금. <br>
+> **void unlock$($)**   lock을 해지. <br>
+> **boolean isLocked$($)** lock이 잠겼는지 확인
+
+임계 영역 내에서 예외가 발생하거나 return문으로 빠져나갈 경우 lock이 풀리지 않을 수 있기 때문에 unlock$($)을 try - finally문으로 감싼다.
+
+```java
+lock.lock() // ReentrantLock lock = new ReentrantLock();
+try {
+    // 임계 영역
+} finally {
+    lock.unlock();
+}
+```
+
+### Condition
+`Condition`은 대기$($await)와 통지$($signal)의 대상을 명확히 구분해준다.
+
+기존의 wait & notify에서는 공유 객체의 waiting pool에 모든 쓰레드가 대기했었지만 각 쓰레드의 Condition을 만들어서 각각의 waiting pool에서 대기상태에 있도록 하였다.
+
+Object|Condition|
+----|----|
+void wait$($) | void await$($) |
+void notify$($) | void signal$($) |
+void notifyAll$($) | void signalAll$($) |
+
+```java
+public void add(String dish) {
+    lock.lock();
+
+    try {
+        while(dishes.size() >= MAX_FOOD) {
+            String name = Thread.currentThread().getName();
+            System.out.println(name + "is waiting");
+
+            try {
+                forCook.await(); // Cook 쓰레드를 기다리게 한다.
+            } catch (InterruptedException e) {}
+        }
+
+        dishes.add(dish);
+        forCust.signal(); // 기다리고 있는 CUST를 깨운다.
+        System.out.println("Dishes:" + dishes.toString());
+    } finally {
+        lock.unlock();
     }
 }
 ```
