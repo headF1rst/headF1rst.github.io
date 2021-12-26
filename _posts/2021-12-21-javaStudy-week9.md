@@ -347,7 +347,7 @@ while(!stopped) {
             Thread.sleep(1000);
         } catch (InterruptedException e) { }
     } else {
-        Thread.yield();
+        Thread.yield(); // static 메서드이다.
     }
 } // while
 ```
@@ -355,6 +355,8 @@ while(!stopped) {
 만약 suspended == true 이고 `else {Thread.yield;}` 문이 생략되어 있었다면 쓰레드는 while문을 의미없이 돌면서 `busy-waiting`상태에 빠지게 될것이다.
 
 `Thread.yield()`를 통해 while문에서 시간을 낭비하지 않고 다른 쓰레드에게 양보하므로 코드가 더 효율적이게 된다.
+
+$($yield는 OS 스케줄러에 의존하기 때문에 정확한 반환 시간을 기대하기 어렵다.)
 
 ### join$($)
 
@@ -467,3 +469,109 @@ java.lang.Exception
 
 즉, 한 쓰레드가 예외에 의해 종료되어도 다른 쓰레드의 실행에는 영향을 미치지 못한다.
 
+## 쓰레드의 동기화
+멀티 쓰레드 프로세스에서는 
+
+- 여러 쓰레드가 같은 자원을 공유한다. $($메모리)
+
+- 한 쓰레드가 다른 쓰레드의 작업에 영향을 미칠 수 있다.
+
+- 다른 쓰레드에게 진행중인 작업이 간섭받지 않게 하기위해 **동기화** 필요.
+
+> **쓰레드의 동기화** : 한 쓰레드가 진행중인 작업을 다른 쓰레드가 간섭하지 못하게 막는 것.
+
+- 간섭받지 않아야 하는 문장을 **임계 영역으로 설정**
+
+- Lock $($열쇠) 을 얻은 단 하나의 쓰레드만 임계영역에 출입가능
+
+- 객체 1개에 Lock 1개
+
+### synchronized 동기화 방법
+`synchronized` 키워드를 통해 임계 영역을 설정할 수 있다.
+
+**1. 메서드 전체를 임계 영역으로 지정**
+```java
+public synchronized void calcSum() {
+    // ... 
+} // 임계 영역 끝
+```
+
+두개의 쓰레드가 출금하는 예제에서의 임계영역 설정
+
+변수 `balance`에 여러 쓰레드가 동시에 접근하지 않도록 동기화 해줘야 한다.
+
+```java
+public synchronized void withdraw(int money) {
+    if(balance >= money) {
+        try { Thread.sleep(1000); } catch(Exception e) { }
+        balance -= money;
+    }
+}
+```
+
+**2. 특정한 영역을 임계 영역으로 지정**
+```java
+synchronized(객체의 참조변수) { // lock을 걸고자 하는 객체를 참조하는 참조변수
+    // ...
+} // 임계 영역 끝
+```
+
+두개의 쓰레드가 출금하는 예제에서의 임계영역 설정
+
+```java
+public void withdraw(int money) {
+    synchronized(this) {
+        if(balance >= money) {
+            try { Thread.sleep(1000); } catch(Exception e) { }
+            balance -= money;
+        }
+    }
+}
+```
+
+동기화 해야되는 객체를 읽고 쓰는 메서드에는 전부 `synchronized`로 동기화 해주어야 한다.
+
+### wait$($) & notify$($)
+
+- 동기화 통해 데이터의 안정성은 보장.
+
+- **But!** 한번에 하나의 쓰레드밖에 임계영역에서 동작하지 못하기 때문에 프로그램의 효율성 저하.
+
+- 동기화 효율 향상을 위해 `wait()`, `notify()` 사용.
+
+- Object클래스내에 정의되어 있다.
+
+- 동기화 블록 내에서만 사용가능.
+
+
+> **wait$($) :** 객체의 lock을 반납하고 쓰레드를 해당 객체의 waiting pool에 넣는다.
+
+> **notify$($) :** waiting pool에 대기중인 임의의 쓰레드 하나를 깨운다.
+> **notifyAll$($) :** waiting pool에 대기중인 모든 쓰레드를 깨운다.
+
+은행 입출금 예제를 통해 wait, notify에 대해 알아보겠다.
+
+계좌에 출금할 돈이 부족해서 한 쓰레드가 lock을 보유한 채로 돈이 입금될 때까지 다른 작업들 마저 진행되지 못하게 된다.
+
+때문에 wait과 notify를 이용해서 다음과 같이 효율을 개선해 주어야 한다.
+
+```java
+class Account {
+    private int balance = 1000;
+
+    public synchronized void withdraw(int money) {
+        while(balance < money) {
+            try {
+                wait(); // 락을 반납하고 기다린다.
+                // 통지를 받으면 락을 재획득(ReEntrance)
+            } catch(InterruptedException e) { }
+        }
+        balance -= money;
+    }
+
+    public synchronized void deposit(int money) {
+        balance += money;
+        notify(); // 대기중인 임의의 쓰레드 하나를 깨움.
+    }
+}
+```
