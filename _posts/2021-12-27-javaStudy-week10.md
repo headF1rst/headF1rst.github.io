@@ -52,6 +52,7 @@ for(Direction d : dArr) {
 ```
 
 ## enum이 제공하는 메서드
+
 | 메서드 | 설명 |
 |-------|-------|
 | Class<<E>E> getDeclaringClass$($) | 열거형의 Class객체를 반환한다. |
