@@ -288,3 +288,9 @@ class MyException extends RuntimeException {
     }
 }
 ```
+
+---
+
+> 참조 <br>
+> Java의 정석 $($남궁 성) <br>
+> [whiteship 자바 라이브 스터디](https://github.com/whiteship/live-study)

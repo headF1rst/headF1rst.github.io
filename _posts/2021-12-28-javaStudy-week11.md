@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "[Java 기초] 애노테이션"
+title: "[Java 기초] 애노테이션 - Annotation"
 category:
   - Java
 ---
@@ -124,3 +124,9 @@ class MyClass {
 애너테이션에 대한 정보가 `javadoc`으로 작성한 문서에 포함되도록 한다.
 
 기본 애너테이션에는 모두 @Documented 애너테이션이 붙어있다.
+
+---
+
+> 참조 <br>
+> Java의 정석 $($남궁 성) <br>
+> [whiteship 자바 라이브 스터디](https://github.com/whiteship/live-study)

@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "[Java 기초] Enum"
+title: "[Java 기초] 열거형 - Enum"
 category:
   - Java
 ---
@@ -211,3 +211,9 @@ EnumSet에 특정 요소를 삭제한다.
 ```java
 set.remove(Direction.EAST);
 ```
+
+---
+
+> 참조 <br>
+> Java의 정석 $($남궁 성) <br>
+> [whiteship 자바 라이브 스터디](https://github.com/whiteship/live-study)
