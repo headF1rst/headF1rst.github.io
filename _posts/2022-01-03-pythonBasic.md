@@ -9,6 +9,8 @@ category:
 
 `list`는 내부적으로 연결리스트 자료구조로 구성되어있다.
 
+C++의 stack을 파이썬에서는 리스트로 대체한다
+
 ```python
 a = list() # []
 
@@ -197,7 +199,7 @@ print(sum) # 55
 
 **더 빠른 입력방법 :**
 
-`import sys`
+`import sys` <br>
 `sys.stdin.readline().rstrip()`
 
 **출력**
@@ -214,4 +216,275 @@ n, m, k = map(int, input().split())
 fdata = sys.stdin.readline().rstrip()
 
 print(f"num은 {num}입니다.") # num은 2입니다.
+```
+
+## 내장함수
+별도의 `import`없이 사용할 수 있다.
+
+**`sum()` -** `iterable`객체의 모든 원소 합을 반환.
+
+```python
+result = sum([1,2,3,4,5])
+print(result) # 5
+```
+
+**`min()` & `max()` -** 가장 작은값, 가장 큰 값을 반환.
+
+```python
+Min = min([1,2,3,4,5])
+Max = max([1,2,3,4,5])
+
+print(Max) # 5
+print(Min) # 1
+```
+
+**`eval()` -** 문자열 형식의 수학 수식을 계산하여 반환.
+
+```python
+result = eval("(3+8) / 2")
+print(result) # 5
+```
+
+**`sorted()` -** `iterable`객체의 원소들을 오름차순 정렬.
+
+key 속성으로 정렬기준을 명세할 수 있다.
+
+ex) `key = lambda x : x[1]`
+
+```python
+# 두번째 원소를 기준으로 내림차순
+result = sorted([('Harry', 90), ('Jadon', 75), ('Phil', 95)], key = lambda x : x[1], reverse=True)
+print(result) # [('Phil', 95), ('Harry', 90), ('Jadon', 75)]
+```
+
+## itertools
+반복되는 데이터를 처리하는데 유용한 라이브러리.
+
+---
+
+**`permutations`**
+
+iterable 객체에서 r개의 데이터를 뽑아 일려로 나열하는 모든 경우를 계산.
+
+```python
+from itertools import permutations
+
+data = ['a', 'b', 'c']
+result = list(permutations(data, 3)) # 모든 순열 구하기
+print(result)
+```
+
+---
+
+**`cobinations`**
+
+iterable객체에서 r개의 데이터를 뽑아 순서를 고려하지 않고 나열하는 모든 경우를 계산.
+
+```python
+from itertools import combinations
+
+data = ['a', 'b', 'c']
+result = list(combinations(data, 3))
+result2 = list(combinations(data, 2)) # 2개를 뽑는 모든 조합 구하기
+print(result) # [('a', 'b', 'c')]
+print(result2) # [('a', 'b'), ('a', 'c'), ('b', 'c')]
+```
+
+---
+
+**`product`**
+
+iterable 객체에서 r개의 데이터를 뽑아 **일렬로 나열**하는 모든 경우를 계산. 
+
+단, 원소를 **중복하여** 뽑는다.
+
+뽑고자 하는 데이터의 수는 `repeat` 속성값으로 할당.
+
+```python
+from itertools import product
+
+data = ['a', 'b', 'c']
+result = list(product(data, repeat=2)) # 2개를 뽑는 모든 수열 구하기(중복 허용)
+print(result) # [('a', 'a'), ('a', 'b'), ('a', 'c'), ('b', 'a'), ('b', 'b'), ('b', 'c'), ('c', 'a'), ('c', 'b'), ('c', 'c')]
+```
+
+---
+
+**`combinations_with_replacement`**
+
+iterable객체에서 r개의 데이터를 뽑아 **순서를 고려하지 않고** 나열하는 모든 경우를 계산하며 원소를 **중복해서** 뽑는다.
+
+```python
+from itertools import combinations_with_replacement
+
+data = ['a', 'b', 'c']
+result = list(combinations_with_replacement(data, 2)) # 2개를 뽑는 모든 조합 구하기(중복 허용)
+print(result) # [('a', 'a'), ('a', 'b'), ('a', 'c'), ('b', 'b'), ('b', 'c'), ('c', 'c')]
+```
+
+## heapq
+`힙(Heap)` 기능을 제공하며 힙은 최소 힙으로 구성되어있다.
+
+최소 힙 자료구조의 최상단 원소는 가장 작은 원소이며 원소를 힙에 넣었다가 빼는 과정만으로도 원소의 오름차순 정렬이 가능하다. `O(NlogN)`
+
+C++의 priority_queue 대신 파이썬에선 `heapq`를 사용.
+
+**`heapq.heappush(리스트, 원소값)` :** 힙에 원소 삽입
+
+**`heapq.heappop(리스트)` :** 힙에서 원소 추출
+
+**오름차순 정렬**
+
+```python
+import heapq
+
+# heapq로 힙 정렬 (오름차순)
+def heapSort(iterable) :
+    h = [] # 힙으로 사용될 리스트
+    result = []
+    
+    # 모든 원소를 차례대로 힙에 삽입
+    for value in iterable:
+        heapq.heappush(h, value)
+        
+    for i in range(len(h)):
+        result.append(heapq.heappop(h))
+    
+    return result
+
+ans = heapSort([1, 4, 5, 9, 2])
+print(ans) # [1, 2, 4, 5, 9]    
+```
+
+**내림차순 정렬**
+최대 힙을 제공하지 않으므로 힙에 원소를 삽입할 때 부호를 바꿨다가 뺄때 다시 부호를 바꾸는 식으로 구현.
+
+```python
+import heapq
+
+# heapq로 힙 정렬(내림차순)
+def heapSort(iterable):
+    h = []
+    result = []
+    
+    for value in iterable:
+        heapq.heappush(h, -value)
+    
+    for i in range(len(h)):
+        result.append(-(heapq.heappop(h)))
+        
+    return result
+
+ans = heapSort([2, 4, 1, 3])
+print(ans) # [4, 3, 2, 1]
+```
+
+## bisect
+이진탐색 구현을 위한 라이브러리.
+
+정렬된 배열에서 특정 원소를 찾는데 효과적이다.
+
+**`bisect_left(a, x)` :** 정렬된 순서를 유지하면서 리스트 `a`에 데이터 `x`를 삽입할 가장 왼쪽 인덱스를 찾는다. `O(logN)`
+
+**`bisect_right(a, x)` :** 정렬된 순서를 유지하면서 리스트 `a`에 데이터 `x`를 삽입할 가장 오른쪽 인덱스를 찾는다. `O(logN)`
+
+```python 
+from bisect import bisect_left, bisect_right
+
+a = [1, 2, 4, 4, 8]
+print(bisect_left(a, 4)) # 2
+print(bisect_right(a, 4)) # 4
+```
+
+### 정렬된 리스트에서 특정 범위에 속하는 원소의 개수 구하기
+
+bisect을 사용해서 **right index - left index**를 통해
+
+`left_value <= x <= right_value`인 원소의 개수를 `O(logN)`으로 개산 가능.
+
+```python
+# a 리스트 내에 4 ~ 9까지 원소의 수를 구하는 예제
+from bisect import bisect_right, bisect_left
+
+a = [2, 4, 4, 5, 6, 9, 10]
+
+left_idx = bisect_left(a, 4) # 1
+right_idx = bisect_right(a, 9) # 6
+
+cnt = right_idx - left_idx
+print(cnt) # 5
+```
+
+## collections
+`dequeue`, `Counter` 자료구조 클래스등을 제공하는 라이브러리.
+
+### deque$($)
+파이썬에서 `deque`를 queue로 사용. $($스택의 대용도 가능.)
+
+**`popleft()` -** 첫번째 원소를 제거
+
+**`pop()` -** 마지막 원소를 제거
+
+**`appendleft(x)` -** 첫번째 인덱스에 원소 x 삽입
+
+**`append(x)` -** 마지막 인덱스에 원소 x 삽입
+
+```python
+from collections import deque
+
+data = deque([1, 2, 3])
+
+data.appendleft(9) # [9, 1, 2, 3]
+data.append(10) # [9, 1, 2, 3, 10]
+
+print(data[0]) # 9
+
+front = data.popleft() # [1, 2, 3, 10]
+print(front) # 9
+data.pop() # [1, 2, 3]
+
+print(data) # deque([1, 2, 3])
+```
+
+### Counter$($)
+iterable객체 내부의 원소가 몇번 등장했는지 알려주는 기능.
+
+원소별 등장 횟수를 세는데 활용.
+
+iterable객체는 `Counter`에 의해 사전형 key-value 형태로 저장됨.
+
+```python
+from collections import Counter
+
+a = ['red', 'red', 'red', 'blue', 'green', 'green']
+
+counter = Counter(a)
+
+print(counter) # Counter({'red': 3, 'green': 2, 'blue': 1})
+print(counter['red']) # 3
+print(counter['blue']) # 1
+print(dict(counter)) # {'blue': 1, 'green': 2, 'red': 3}
+```
+
+counter에는 value의 내림차순으로 정렬이 되어있다.
+
+사전형으로 변환하면 value의 오름차순으로 정렬이 되어있다.
+
+## math
+
+```python
+import math
+
+# 5! 출력
+print(math.factorial(5)) # 120
+
+# 7의 제곱근 출력
+print(math.sqrt(7)) # 2.64575131106
+
+# 21과 14의 최대 공약수 출력
+print(math.gcd(21, 14)) # 7
+
+print(math.pi) # 3.14159265359
+print(math.e) # 2.71828182846
+print(abs(-1)) # 1
 ```
