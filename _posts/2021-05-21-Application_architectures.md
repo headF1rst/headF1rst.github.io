@@ -165,6 +165,3 @@ POST 와 GET 메소드는 HTTP 프로토콜에서 데이터를 client에서 serv
 |505|지원하지 않는 HTTP 버전| 해당 버전의 HTTP를 지원하지 않는다|
 
 
-<br> <br>
-
-

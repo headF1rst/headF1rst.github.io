@@ -4,14 +4,14 @@ title : "[Network] Computer Network & Internet"
 category : 
     - CS
 ---
-### 네트워크란?
+## 네트워크란?
 네트워크란 Net + Work의 합성어로써 두대 이상의 컴퓨터들을 연결하고 서로 통신하며 자원을 공유하는것을 말합니다.
 
 컴퓨터, 스마트폰, 데이터 송수신 장치등과 같은 노드들은 `네트워크`란 전송매체를 링크로 서로 연결되어 있으며 링크를 통해 서로 간의 회선과 패킷을 교환하여 데이터 통신을 하게 됩니다.
 
 `IEEE`에서는 네트워크를 "몇개의 독립적인 장치가 적절한 영역 내에서 적당히 빠른 속도의 물리적 통신 체널을 통하여 서로가 직접 통신할 수 있도록 지원해주는 데이터 통신 체계" 라고 정의하고 있습니다.
 
-### 네트워크의 종류
+## 네트워크의 종류
 
 ![point to point network](/assets/images/ComputerNetwork/Network-type.png)
 
@@ -20,7 +20,7 @@ category :
 - MAN(Metropolitan Area Network) : 대도시 영역 네트워크
 - WAN$($Wide Area Network) : 광대역 네트워크. 주로 ISP$($Internet Service Provider)에 의해 제공. ISP = KT, SKT... 
 
-### 스위칭
+## 스위칭
 ![point to point network](/assets/images/ComputerNetwork/point_to_point.jpeg)
 
 point to point 방식의 경우 모든 단말들 간의 연결을 해야하기 때문에 비용이 많이든다는 단점이 있습니다.  따라서 **라우터**(스위치)에 단말들을 연결하여 교환망을 구성합니다. 라우터를 지역 마다 설치하고 연결하여  넓은 지역을 커버할 수 있습니다.
@@ -74,7 +74,7 @@ point to point 방식의 경우 모든 단말들 간의 연결을 해야하기 �
 
 패킷들은 고유의 가상 회선 번호를 갖꼬 있으며 교환기는 설정 과정에서 할당한 가상회선 번호에 따라서 패킷을 다음 노드로 전달하게 됩니다. 이로인해 패킷들은 송신했던 순서대로 전달되게 됩니다.
 
-### 패킷 지연과 손실
+## 패킷 지연과 손실
 ![packet_loss&delay](/assets/images/ComputerNetwork/packet_loss.jpeg)
 
 여러 노드$($컴퓨터)에서 전송된 패킷들은 라우터의 버퍼에 큐잉$($queueing)됩니다. 패킷은 큐에서 자기 차례를 기다리며 $($지연) 패킷 도착률이 출력 링크 용량을 일시적으로 넘어서 패킷이 도착했을 때 버퍼$($queue)에 빈공간이 없다면 해당 패킷은 버려지게 됩니다. $($손실) 

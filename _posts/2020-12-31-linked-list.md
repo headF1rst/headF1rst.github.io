@@ -12,7 +12,7 @@ category:
 
 하지만 위의 단순 연결리스트의 경우 전위 노드를 찾기 힘들다는 단점이 있으며 이를 보완하기 위해 양방향 연결 필드를 갖는 `이중 연결 리스트 (Double linked list)`를 주로 사용합니다.
 
-### 이중 연결 리스트 $($Double linked list)
+## 이중 연결 리스트 $($Double linked list)
 
 ![DblLinked-list](/assets/images/DblLinked-list.png "이중 연결 리스트")
 
@@ -22,7 +22,8 @@ category:
 
 C++에서의 STL `list`또한 `이중 연결 리스트` 로 구현되어 있습니다.
 
-### [ADT] 연결리스트의 구현
+## [ADT] 연결리스트의 구현
+
 ``` cpp
 #include<iostream>
 using namespace std;
@@ -67,15 +68,15 @@ void DblList::Delete(DblListNode *x)
 }
 ```
 
-### 이중 연결 원형 리스트에서의 <u>삽입</u>
+## 이중 연결 원형 리스트에서의 <u>삽입</u>
 
 ![DblLinked-list-Insert](/assets/images/DblLinked-list-Insert.png "이중 연결 리스트 삽입")
 
-### 이중 연결 원형 리스트에서의 <u>삭제</u>
+## 이중 연결 원형 리스트에서의 <u>삭제</u>
 
 ![DblLinked-list-Delete](/assets/images/DblLinked-list-Delete.png "이중 연결 리스트 삭제")
 
-### [STL] list의 멤버함수 및 사용
+## [STL] list의 멤버함수 및 사용
 `#include<list>` 
 <br>
 
@@ -84,13 +85,13 @@ void DblList::Delete(DblListNode *x)
 
 ex) list<int> ls;
 
-**Iterator (반복자)**
+### Iterator $($반복자)
 
 - **begin$($)** : beginning iterator 반환
 
 - **end$($)** : end iterator 반환
 
-**삽입 및 삭제**
+### 삽입 및 삭제
 
 - **push_front$($element)** : 리스트 맨앞에 원소 추가
 
@@ -108,7 +109,7 @@ ex) list<int> ls;
 
 - **remove_if$($predict)** : 단항 조건자 predicate에 해당하는 원소를 모두 제거
 
-**Search**
+### Search
 
 - **front$($)** : 맨앞의 원소를 반환
 
@@ -116,7 +117,7 @@ ex) list<int> ls;
 
 - ***iterator** : iterator가 가리키는 원소에 접근
 
-**ETC**
+### ETC
 
 -  **empty$($)** : 리스트가 비었으면 true, 아니면 false 반환
 
@@ -124,7 +125,7 @@ ex) list<int> ls;
 
 - **assign$($num_element, value)** : num_element 개의 원소를 할당하고 value값으로 초기화한다.
 
-**사용 예제**
+## 사용 예제
 
 ``` cpp
 #include <iostream>
@@ -179,7 +180,7 @@ int main(void)
 }
 ```
 
-### 연결 스택과 큐
+## 연결 스택과 큐
 ``` cpp
 #include<stack>
 #include<queue>
