@@ -1,10 +1,6 @@
 ---
-layout: post
 toc: true
 title: "[C++] Undefined behavior $($cout과 printf의 출력 순서)"
-date:
-lastmode:
-sitemap:
 category: 
     - C++
 ---
