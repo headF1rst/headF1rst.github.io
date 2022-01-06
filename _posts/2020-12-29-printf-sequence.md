@@ -1,6 +1,12 @@
 ---
+layout: post
 toc: true
 title: "[C++] Undefined behavior $($cout과 printf의 출력 순서)"
+date: 2020-12-29 12:00:00
+lastmod: 2020-12-29 12:00:00
+sitemap:
+    changefreq : weekly
+    priority : 0.5
 category: 
     - C++
 ---
