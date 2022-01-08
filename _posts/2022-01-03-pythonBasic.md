@@ -73,6 +73,21 @@ res = [i for i in arr if i not in remove_set]
 print(res) # [2, 3, 5]
 ```
 
+### 리스트 메서드 시간복잡도
+
+|메서드|시간복잡도|
+|---|---|
+|copy|`O(n)`|
+|append|`O(1)`|
+|pop|`O(1)`|
+|insert|`O(n)`|
+|getitem|`O(1)`|
+|setitem|`O(1)`|
+|delitem|`O(n)`|
+|sort|`O(nlogn)`|
+|x in s|`O(n)`|
+|min$($s), max$($s)|`O(n)`|
+
 ## 문자열
 
 문자열은 내부적으로 리스트와 같다.
@@ -421,13 +436,13 @@ print(cnt) # 5
 ### deque$($)
 파이썬에서 `deque`를 queue로 사용. $($스택의 대용도 가능.)
 
-**`popleft()` -** 첫번째 원소를 제거
+**`popleft()` -** 첫번째 원소를 제거 `O(1)`
 
-**`pop()` -** 마지막 원소를 제거
+**`pop()` -** 마지막 원소를 제거 `O(1)`
 
-**`appendleft(x)` -** 첫번째 인덱스에 원소 x 삽입
+**`appendleft(x)` -** 첫번째 인덱스에 원소 x 삽입 `O(1)`
 
-**`append(x)` -** 마지막 인덱스에 원소 x 삽입
+**`append(x)` -** 마지막 인덱스에 원소 x 삽입 `O(1)`
 
 ```python
 from collections import deque
