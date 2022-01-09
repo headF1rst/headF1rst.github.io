@@ -4,7 +4,7 @@ title: "벨만-포드 알고리즘 [파이썬 예제 코드]"
 category:
   - Algorithm
 ---
-`최단 경로(Shortest Path)`를 구하는 대표적인 알고리즘에는 `다익스트라(Dijkstra's)`알고리즘과 `벨만-포드(Bellman-Ford's)`알고리즘이 있다.
+**`최단 경로(Shortest Path)`** 를 구하는 대표적인 알고리즘에는 **`다익스트라(Dijkstra's)`** 알고리즘과 **`벨만-포드(Bellman-Ford's)`** 알고리즘이 있다.
 
 
 둘의 차이점을 아주 간단하게 비교하자면 
@@ -18,7 +18,7 @@ category:
 ## 벨만-포드 알고리즘 개념
 시작노드`s`에서 `v`에 이르는 최단경로는 `s`에서 임의의 지점 `u`까지의 최단경로에 `u`에서 `v`사이의 가중치를 더한 값과 같다.
 
-> `D(s, v) = D(s, u) + w(u, v)`
+> **`D(s, v) = D(s, u) + w(u, v)`**
 
 벨만-포드 알고리즘은 `s, u` 사이의 최단경로를 구할 때 그래프 내 모든 간선에 대해 `edge relaxation`을 수행해준다.
 
@@ -37,7 +37,7 @@ a ~ d의 과정은 그래프 모든 간선에 대한 edge relaxation을 1회 수
 
 ![bellmanford](https://i.imgur.com/hcWT22F.png)
 
-<samll> 출처 - [ratsgo's blog](https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/) </small>
+<samll> 출처- https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
 
 **$($a)**
 
@@ -76,7 +76,7 @@ edge relaxation이 2회 수행되며 다시 모든 간선을 확인해 가면서
 
 ![bellmanford](https://i.imgur.com/46tJqd7.png)
 
-<samll> 출처 - [ratsgo's blog](https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/) </small>
+<samll> 출처 - https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
 
 위 그림에서 `(c, d)`, `(e, f)`가 사이클을 이루고 있다.
 
