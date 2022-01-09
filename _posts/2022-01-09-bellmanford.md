@@ -37,7 +37,7 @@ a ~ d의 과정은 그래프 모든 간선에 대한 edge relaxation을 1회 수
 
 ![bellmanford](https://i.imgur.com/hcWT22F.png)
 
-<samll> 출처- https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
+<small> 출처- https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
 
 **$($a)**
 
@@ -76,7 +76,7 @@ edge relaxation이 2회 수행되며 다시 모든 간선을 확인해 가면서
 
 ![bellmanford](https://i.imgur.com/46tJqd7.png)
 
-<samll> 출처 - https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
+<small> 출처 - https://ratsgo.github.io/data%20structure&algorithm/2017/11/27/bellmanford/ </small>
 
 위 그림에서 `(c, d)`, `(e, f)`가 사이클을 이루고 있다.
 
