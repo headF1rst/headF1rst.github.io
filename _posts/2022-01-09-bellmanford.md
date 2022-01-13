@@ -1,11 +1,10 @@
 ---
 toc: true
-title: "[Algorithm] 벨만-포드 알고리즘 [파이썬 예제 코드]"
+title: "벨만-포드 알고리즘 [파이썬 예제 코드]"
 category:
   - Algorithm
 ---
 **`최단 경로(Shortest Path)`** 를 구하는 대표적인 알고리즘에는 **`다익스트라(Dijkstra's)`** 알고리즘과 **`벨만-포드(Bellman-Ford's)`** 알고리즘이 있다.
-
 
 둘의 차이점을 아주 간단하게 비교하자면 
 
