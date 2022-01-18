@@ -75,18 +75,18 @@ print(res) # [2, 3, 5]
 
 ### 리스트 메서드 시간복잡도
 
-|메서드|시간복잡도|
-|---|---|
-|copy|`O(n)`|
-|append|`O(1)`|
-|pop|`O(1)`|
-|insert|`O(n)`|
-|getitem|`O(1)`|
-|setitem|`O(1)`|
-|delitem|`O(n)`|
-|sort|`O(nlogn)`|
-|x in s|`O(n)`|
-|min$($s), max$($s)|`O(n)`|
+| 메서드             | 시간복잡도 |
+| ------------------ | ---------- |
+| copy               | `O(n)`     |
+| append             | `O(1)`     |
+| pop                | `O(1)`     |
+| insert             | `O(n)`     |
+| getitem            | `O(1)`     |
+| setitem            | `O(1)`     |
+| delitem            | `O(n)`     |
+| sort               | `O(nlogn)` |
+| x in s             | `O(n)`     |
+| min$($s), max$($s) | `O(n)`     |
 
 ## 문자열
 
@@ -234,6 +234,7 @@ print(f"num은 {num}입니다.") # num은 2입니다.
 ```
 
 ## 내장함수
+
 별도의 `import`없이 사용할 수 있다.
 
 **`sum()` -** `iterable`객체의 모든 원소 합을 반환.
@@ -273,6 +274,7 @@ print(result) # [('Phil', 95), ('Harry', 90), ('Jadon', 75)]
 ```
 
 ## itertools
+
 반복되는 데이터를 처리하는데 유용한 라이브러리.
 
 ---
@@ -309,7 +311,7 @@ print(result2) # [('a', 'b'), ('a', 'c'), ('b', 'c')]
 
 **`product`**
 
-iterable 객체에서 r개의 데이터를 뽑아 **일렬로 나열**하는 모든 경우를 계산. 
+iterable 객체에서 r개의 데이터를 뽑아 **일렬로 나열**하는 모든 경우를 계산.
 
 단, 원소를 **중복하여** 뽑는다.
 
@@ -338,6 +340,7 @@ print(result) # [('a', 'a'), ('a', 'b'), ('a', 'c'), ('b', 'b'), ('b', 'c'), ('c
 ```
 
 ## heapq
+
 `힙(Heap)` 기능을 제공하며 힙은 최소 힙으로 구성되어있다.
 
 최소 힙 자료구조의 최상단 원소는 가장 작은 원소이며 원소를 힙에 넣었다가 빼는 과정만으로도 원소의 오름차순 정렬이 가능하다. `O(NlogN)`
@@ -348,6 +351,8 @@ C++의 priority_queue 대신 파이썬에선 `heapq`를 사용.
 
 **`heapq.heappop(리스트)` :** 힙에서 원소 추출
 
+**`heapq.heapify(리스트)` :** 리스트를 선형 시간으로 제자리에서 힙으로 변환.
+
 **오름차순 정렬**
 
 ```python
@@ -357,18 +362,18 @@ import heapq
 def heapSort(iterable) :
     h = [] # 힙으로 사용될 리스트
     result = []
-    
+
     # 모든 원소를 차례대로 힙에 삽입
     for value in iterable:
         heapq.heappush(h, value)
-        
+
     for i in range(len(h)):
         result.append(heapq.heappop(h))
-    
+
     return result
 
 ans = heapSort([1, 4, 5, 9, 2])
-print(ans) # [1, 2, 4, 5, 9]    
+print(ans) # [1, 2, 4, 5, 9]
 ```
 
 **내림차순 정렬**
@@ -381,13 +386,13 @@ import heapq
 def heapSort(iterable):
     h = []
     result = []
-    
+
     for value in iterable:
         heapq.heappush(h, -value)
-    
+
     for i in range(len(h)):
         result.append(-(heapq.heappop(h)))
-        
+
     return result
 
 ans = heapSort([2, 4, 1, 3])
@@ -395,6 +400,7 @@ print(ans) # [4, 3, 2, 1]
 ```
 
 ## bisect
+
 이진탐색 구현을 위한 라이브러리.
 
 정렬된 배열에서 특정 원소를 찾는데 효과적이다.
@@ -403,7 +409,7 @@ print(ans) # [4, 3, 2, 1]
 
 **`bisect_right(a, x)` :** 정렬된 순서를 유지하면서 리스트 `a`에 데이터 `x`를 삽입할 가장 오른쪽 인덱스를 찾는다. `O(logN)`
 
-```python 
+```python
 from bisect import bisect_left, bisect_right
 
 a = [1, 2, 4, 4, 8]
@@ -431,9 +437,11 @@ print(cnt) # 5
 ```
 
 ## collections
+
 `dequeue`, `Counter` 자료구조 클래스등을 제공하는 라이브러리.
 
 ### deque$($)
+
 파이썬에서 `deque`를 queue로 사용. $($스택의 대용도 가능.)
 
 **`popleft()` -** 첫번째 원소를 제거 `O(1)`
@@ -462,6 +470,7 @@ print(data) # deque([1, 2, 3])
 ```
 
 ### Counter$($)
+
 iterable객체 내부의 원소가 몇번 등장했는지 알려주는 기능.
 
 원소별 등장 횟수를 세는데 활용.
