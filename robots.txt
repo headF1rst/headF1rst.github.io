@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://headf1rst.github.io/sitemap.xml
+Sitemap: https://headf1rst.github.io/sitemapp.xml
