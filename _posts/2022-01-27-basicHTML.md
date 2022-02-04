@@ -26,7 +26,7 @@ IP 패킷은 출발지 IP 주소, 도착지 IP 주소, 메세지 등이 포함�
 
 $($예 -> Hello, $($패킷1)와 world!$($패킷2)를 클라이언트측에서 보냈는데 world!가 먼저도착하여 world!Hello,로 받게 된다.)
 
-![IMG_8BED333EDECC-1.jpeg](HTML%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%209626fc94b6c248088d1169e59572cfbc/IMG_8BED333EDECC-1.jpeg)
+![IMG_8BED333EDECC-1.jpeg](https://i.imgur.com/gY3dgcx.png)
 
 ---
 
@@ -54,7 +54,7 @@ IP 정보 안에다가 TCP에대한 정보가 들어간다.
 
 TCP - 전송 제어 프로토콜 - 패킷전송을 어떻게 할지 제어한다.
 
-## TCP (Transmission Control Protocol)
+## TCP $($Transmission Control Protocol)
 
 기존의 IP에 TCP를 추가하여 문제점들을 보완할 수 있다.
 
