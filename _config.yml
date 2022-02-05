@@ -280,3 +280,15 @@ defaults:
     values:
       sidebar:
         nav: "category"
+
+# _diary
+  - scope:
+      path: ""
+      type: dev-diary
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: true
