@@ -4,16 +4,16 @@ layout: archive
 
 {{ content }}
 
-{% assign categories_max = 0 %}
-{% for category in site.categories %}
-  {% if category[1].size > categories_max %}
-    {% assign categories_max = category[1].size %}
+{% assign dev-diary_max = 0 %}
+{% for category in site.dev-diary %}
+  {% if category[1].size > dev-diary_max %}
+    {% assign dev-diary_max = category[1].size %}
   {% endif %}
 {% endfor %}
 
 <ul class="taxonomy__index">
-  {% for i in (1..categories_max) reversed %}
-    {% for category in site.categories %}
+  {% for i in (1..dev-diary_max) reversed %}
+    {% for category in site.dev-diary %}
       {% if category[1].size == i %}
         <li>
           <a href="#{{ category[0] | slugify }}">
@@ -26,8 +26,8 @@ layout: archive
 </ul>
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-{% for i in (1..categories_max) reversed %}
-  {% for category in site.categories %}
+{% for i in (1..dev-diary_max) reversed %}
+  {% for category in site.dev-diary %}
     {% if category[1].size == i %}
       <section id="{{ category[0] | slugify | downcase }}" class="taxonomy__section">
         <h2 class="archive__subtitle">{{ category[0] }}</h2>
