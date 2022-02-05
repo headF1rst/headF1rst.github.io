@@ -2,8 +2,8 @@
 main:
   - title: "Category"
     url: /categories/
-  - title: "Terminology"
-    url: /terminology/
+  - title: "dev-Diary"
+    url: /dev-diary/
   - title: "Portfolio"
     url: /portfolio/
   - title: "About"
