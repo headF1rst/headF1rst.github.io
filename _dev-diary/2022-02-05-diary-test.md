@@ -1,6 +1,6 @@
 ---
 toc: true
 title: "Diary Setting Test"
-category: 
+diary-category: 
     - test
 ---
