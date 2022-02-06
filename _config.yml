@@ -237,9 +237,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-dev-diary_archive:
+diary_archive:
   type: liquid
-  path: /dev-diary/
+  path: /diary/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -258,6 +258,11 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+collections:
+  diary:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
