@@ -284,7 +284,7 @@ defaults:
 # _diary
   - scope:
       path: ""
-      type: dev-diary
+      type: diary
     values:
       layout: single
       author_profile: true

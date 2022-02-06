@@ -3,7 +3,7 @@ main:
   - title: "Category"
     url: /categories/
   - title: "dev-Diary"
-    url: /dev-diary/
+    url: /diary/
   - title: "Portfolio"
     url: /portfolio/
   - title: "About"

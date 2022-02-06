@@ -1,6 +1,6 @@
 ---
 title: "Posts by Diary"
-layout: dev-diary
-permalink: /dev-diary/
+layout: diary
+permalink: /diary/
 author_profile: true
 ---
