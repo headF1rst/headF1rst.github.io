@@ -1,6 +1,6 @@
 ---
 title: "Posts by Diary"
-layout: categories
+layout: diary-categories
 permalink: /diary/
 collection: diary
 author_profile: true
