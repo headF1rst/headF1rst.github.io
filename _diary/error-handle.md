@@ -4,3 +4,5 @@ excerpt: "프로젝트를 진행하면서 마주친 크고 작은 오류들을 �
 header:
   teaser: /assets/images/neverGiveup.jpeg
 ---
+
+- [“h2 database not found, java Permission denied”](/_error-handling/2022-02-06.md)
