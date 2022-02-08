@@ -7,5 +7,3 @@ author_profile: true
 entries_layout: grid
 classes: wide
 ---
-
-개발 일기장.
