@@ -5,4 +5,7 @@ header:
   teaser: /assets/images/neverGiveup.jpeg
 ---
 
-- <span style ="font-size: 250%">[“h2 database not found, java Permission denied”](/error-handling/2022-02-06.md)</span>
+---
+- <span style ="font-size: 180%">[“h2 database not found, java Permission denied”](/error-handling/2022-02-06.md)</span>
+---
+- [“h2 database not found, java Permission denied”](/error-handling/2022-02-06.md)
