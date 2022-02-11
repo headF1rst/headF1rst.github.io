@@ -291,11 +291,21 @@ defaults:
       path: ""
       type: diary
     values:
-      sidebar:
-        nav: "category"
-      # layout: single
-      # author_profile: true
-      # read_time: false
-      # comments: true
-      # share: true
-      # related: true
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: true
+
+# _error-handling
+  - scope:
+      path: ""
+      type: error-handle
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: true
+      share: true
+      related: true

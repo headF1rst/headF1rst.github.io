@@ -6,6 +6,5 @@ header:
 ---
 
 ---
-- <span style ="font-size: 180%">[“h2 database not found, java Permission denied”](/error-handling/2022-02-06/)</span>
+- <span style ="font-size: 150%">[“h2 database not found, java Permission denied”](/_error-handling/2022-02-06/)</span>
 ---
-- [“h2 database not found, java Permission denied”](/error-handling/2022-02-06/)
