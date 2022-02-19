@@ -41,21 +41,21 @@ JPA는 데이터를 두 개의 타입으로 분류한다.
 ```java
 @Entity
 public class Store {
-		
-		...
-		@Embedded
-		private Address storeAddress;
+	
+	...
+	@Embedded
+	private Address storeAddress;
 ```
 
 ```java
 @Embeddable
 public class Address {
 
-		private String city;
-		private String street;
-		private String zipcode;
+	private String city;
+	private String street;
+	private String zipcode;
 
-		public Address() {} // 기본 생성자
+	public Address() {} // 기본 생성자
 ```
 
 - `@Embeddable` : 값 타입을 정의하는 곳에 표시
@@ -72,11 +72,11 @@ public class Address {
 @Entity
 public class officer {
 
-		@Embedded
-		private Address homeAddress;
+	@Embedded
+	private Address homeAddress;
 
-		@Embedded
-		private Address workAddress;
+	@Embedded
+	private Address workAddress;
 ```
 
 이러한 경우, `@AttributeOverrides` , `@AttributeOverride` 를 사용해서 
@@ -86,19 +86,19 @@ public class officer {
 @Entity
 public class officer {
 
-		@Embedded
-		private Address homeAddress;
+	@Embedded
+	private Address homeAddress;
 
-		@Embedded
-		@AttributeOverrides({
-					@AttributeOverride(name="city", column = 
-					@Column(name = "WORK_CITY")),
-					@AttributeOverride(name="street", column = 
-					@Column(name = "WORK_STREET")),
-					@AttributeOverride(name="zipcode", column = 
-					@Column(name = "WORK_ZIPCODE")),
-		})					
-		private Address workAddress;
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="city", column = 
+		@Column(name = "WORK_CITY")),
+		@AttributeOverride(name="street", column = 
+		@Column(name = "WORK_STREET")),
+		@AttributeOverride(name="zipcode", column = 
+		@Column(name = "WORK_ZIPCODE")),
+	})					
+	private Address workAddress;
 ```
 
 단, 임베디드 타입을 포함한 값 타입을 여러 엔티티에서 공유하면 side effect이 생길 
@@ -154,11 +154,11 @@ $($Integer, String은 자바가 제공하는 불변 객체)
 ```java
 @Entity
 public class Group {
-		...
-		@ElementCollection
-		@CollectionTable(name = "GROUP_MEMBER", joinColumns = 
-		@JoinColumn(name = "GROUP_ID"))
-		private List<String> groupMember = new ArrayList<>();
+	...
+	@ElementCollection
+	@CollectionTable(name = "GROUP_MEMBER", joinColumns = 
+	@JoinColumn(name = "GROUP_ID"))
+	private List<String> groupMember = new ArrayList<>();
 ```
 
 값 타입 컬렉션의 생명 주기는 컬렉션이 선언된 엔티티에 의존한다.
