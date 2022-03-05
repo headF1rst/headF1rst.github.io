@@ -7,3 +7,5 @@ header:
 
 ## 프로미서 $($Promiser)
 친구들과 약속 장소 선정을 도와주는 어플리케이션
+
+- [2/16 - 패키지 구조는 어떻게 가져가야 할까?](https://headf1rst.github.io/etc/promisor-diary-2/)

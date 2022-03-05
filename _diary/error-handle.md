@@ -7,12 +7,5 @@ header:
 
 ## DB 에러
 
-- [“h2 database not found, java Permission denied”](/_posts/2022-02-06-error-1)
+- [“h2 database not found, java Permission denied”](https://headf1rst.github.io/etc/error-1/)
 
-- [“h2 database not found, java Permission denied”](/_posts/2022-02-06-error-1/)
-
-- [“h2 database not found, java Permission denied”](/Users/sanha/Desktop/Sanha_blog/_posts/2022-02-06-error-1/)
-
-- [“h2 database not found, java Permission denied”](/_posts/2022-02-06-error-1.md)
-
-- [“h2 database not found, java Permission denied”](/_posts/2022-02-06-error-1.md/)
