@@ -90,21 +90,21 @@ category:
 
 ```json
 └── petclinic
-						├── model
-						|			├── BaseEntity.java
-						|			├── NamedEntity.java
-						|			└── Person.java
-						|
-				    ├── owner
-						|			├── Owner.java
-						|			├── OwnerController.java
-						|			├── OwnerRepository.java
-						|     ├── ...
-						|
-						|
-						├── system
-						├── vet
-						├── PetClinicApplication.java
+	├── model
+	|	├── BaseEntity.java
+	|	├── NamedEntity.java
+	|	└── Person.java
+	|
+	├── owner
+	|	├── Owner.java
+	|	├── OwnerController.java
+	|	├── OwnerRepository.java
+	|       ├── ...
+	|
+	|
+	├── system
+	├── vet
+	├── PetClinicApplication.java
 ```
 
 petclinic 패키지 구조 또한 ower 패키지 내에 도메인, 컨트롤러, 레포지토리로 구성된 도메인형 구조였다.
