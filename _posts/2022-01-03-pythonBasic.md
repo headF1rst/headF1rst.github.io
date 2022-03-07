@@ -139,6 +139,25 @@ if '과학' in data : # 과학이 존재하지 않음.
     print("과학이 존재합니다.")
 ```
 
+### defaultdict$($)
+
+없는 key값을 입력한 경우, dict은 에러가 발생하지만 defaultdict은 인자로 들어온 자료형에 알맞는 **기본값으로 value를 초기화** 해줍니다.
+
+```python
+from collections import defaultdict
+
+dic_list = defaultdict(list)
+dic_int = defaultdict(int)
+dic = dict()
+
+dic_list["list_A"]
+dic_int["int_A"]
+dic["A"] # ERROR!
+
+print(dic_list)# defaultdict(<class 'list'>, {'list_A': []})
+print(dic_int)# defaultdict(<class 'int'>, {'int_A': 0})
+```
+
 ## 집합 자료형 set$($)
 
 - 중복을 허용하지 않는다.
@@ -288,12 +307,13 @@ from itertools import permutations
 
 data = ['a', 'b', 'c']
 result = list(permutations(data, 3)) # 모든 순열 구하기
-print(result)
+print(result) 
+# [('a', 'b', 'c'), ('a', 'c', 'b'), ('b', 'a', 'c'), ('b', 'c', 'a'), ('c', 'a', 'b'), ('c', 'b', 'a')]
 ```
 
 ---
 
-**`cobinations`**
+**`combinations`**
 
 iterable객체에서 r개의 데이터를 뽑아 순서를 고려하지 않고 나열하는 모든 경우를 계산.
 
