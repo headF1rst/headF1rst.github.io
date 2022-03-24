@@ -4,14 +4,21 @@ title: "여러 계층에서의 Optional을 통한 NPE 처리"
 category:
   - Back_End
 ---
-**null** 이라는 개념을 고안했던 영국의 컴퓨터 과학자 Tony Hoare는 당시에 "존재하지 않는 값"을 표현할 수 있는 가장 편리한 방법을 null 참조라고 생각하였으나 이는 "10억불 짜리 큰 실수" 였다고 토로하였다.
+**null** 이라는 개념을 고안했던 영국의 컴퓨터 과학자 Tony Hoare는 당시에 
+"존재하지 않는 값"을 표현할 수 있는 가장 편리한 방법을 null 참조라고 생각하였으나 
+이는 "10억불 짜리 큰 실수" 였다고 토로하였다.
+
 [Null References: The Billion Dollar Mistake - Tony Hoare](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/)
 
-특히, **null** 참조로 인한 NPE$($NullPointerException)는 프로그램 곳곳에서 컴파일 타임에 숨어있다가 런타임에 문제를 일으켜 자바 개발자들을 잠 못 이루게 하는 골칫덩어리 같은 녀석이다.
+특히, **null** 참조로 인한 NPE$($NullPointerException)는 프로그램 곳곳에서 
+컴파일 타임에 숨어있다가 런타임에 문제를 일으켜 자바 개발자들을 잠 못 이루게 하는 
+골칫덩어리 같은 녀석이다.
 
-Java8 이전에는 NPE의 위험에 노출된 코드가 있다면 null값인지를 확인해 주는 조건문을 사용하여 NPE를 예방하였다.
+Java8 이전에는 NPE의 위험에 노출된 코드가 있다면 null값인지를 확인해 주는 조건문을 
+사용하여 NPE를 예방하였다.
 
-하지만 null 체크를 위한 조건문과 return문이 코드에 도배되면서 핵심 비즈니스 로직을 파악하기 어려워지고 코드 가독성과 유지 보수성이 현저히 낮아지는 문제가 존재하였다.
+하지만 null 체크를 위한 조건문과 return문이 코드에 도배되면서 핵심 비즈니스 로직을 
+파악하기 어려워지고 코드 가독성과 유지 보수성이 현저히 낮아지는 문제가 존재하였다.
 
 ## Java8 - Optional의 등장
 

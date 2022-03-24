@@ -73,7 +73,7 @@ MySql을 사용한 이유는 대표적인 RDBMS 이면서 NoSql에 비해 데이
 |Category|Stack|
 |---|---|
 |Language|Typescript|
-|Framework(Library)|React|
+|Framework$($Library)|React|
 |CSS|Styled Components|
 
 - 프론트엔드 기술은 프론트엔드 파트에서 작성했다.
