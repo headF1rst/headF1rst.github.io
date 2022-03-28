@@ -10,6 +10,6 @@ header:
 
 - [3/5 - 사용자 관점에서 요구사항을 분석해 보자! 🗣️](https://headf1rst.github.io/etc/promisor-diary-1/)
 
-[3/8 - '남들이 다 쓰니까'라는 이유는 없다! - 백엔드 편](https://headf1rst.github.io/etc/promisor-diary-3/)
+- [3/8 - '남들이 다 쓰니까'라는 이유는 없다! - 백엔드 편](https://headf1rst.github.io/etc/promisor-diary-3/)
 
 - [3/9 - 패키지 구조는 어떻게 가져가야 할까? 🧐](https://headf1rst.github.io/etc/promisor-diary-2/)

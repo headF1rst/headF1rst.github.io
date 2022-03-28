@@ -9,3 +9,4 @@ header:
 
 - [“h2 database not found, java Permission denied” 🧨](https://headf1rst.github.io/etc/error-1/)
 
+- ["Port 8080 is already in use 🧨"](https://headf1rst.github.io/etc/error-2/)
