@@ -105,11 +105,11 @@ public static void main(String[] args) {
 
     Order firstOrder = new Order();
     firstOrder.setFood("엽기 떡볶이");
-    firstOrder.setSpicy("덜 매운 맛");
+    firstOrder.setSpicy("덜 매운맛");
     firstOrder.setQuantity(2);
 
     Order secondOrder = firstOrder; // !!!
-    secondOrder.setSpicy("오리지널 매운 맛");
+    secondOrder.setSpicy("오리지널 매운맛");
 }
 ```
 
@@ -117,9 +117,57 @@ Order라는 VO를 구현하였다.
 
 엽떡 매장에 엽기 떡볶이 주문 2건이 들어왔다.
 
-2건 모두 보통 매운 맛과 2개를 주문해서 첫번째 주문을 생성하고 두번째 주문은 첫번째 주문을 복사하였다.
+2건 모두 덜 매운맛 2개를 주문해서 첫번째 주문을 생성하고 두번째 주문은 첫번째 주문을 복사하였다.
 
-이때 두 번째 주문한 손님이 너무 매울거 같았던지 덜 매운맛으로 맵기를 변경하였다.
+이때 두 번째 주문한 손님 중 한 분이 엽떡은 오리지널이라며 오리지널 매운맛으로 변경하였다.
 
-첫번째 손님은 주문한 떡볶이를 받았지만 너무 매워서 한입도 먹지 못했다.
+첫번째 손님은 주문한 떡볶이를 받았지만 너무 매워서 한입도 먹지 못했다. 알고 보니 오리지널 매운맛이 나온것이다.
 
+이게 도대체 어떻게 된 일 일까?
+
+두 번째 주문은 첫 번째 주문의 속성 값을 복사한 것이 아닌 참조하고 있는 **메모리의 주소값을 복사**했기 때문에 두 번째 주문의 맵기를 변경한 결과로 첫 번째 주문도 변경된 값을 가리키게 된 것이다.
+
+이러한 오류를 방지하고자 VO에는 Setter를 사용하지 않으며 VO인 Order 객체를 불변으로 만들어야 한다.
+
+다음과 같이 생성자를 통해서 값을 받고 Order객체는 불변이 되어야 한다.
+
+```java
+@Getter
+public class Order {
+
+    private String food;
+    private String spicy;
+    private int quantity;
+
+    public Order(String food, String spicy, int quantity) {
+        this.food = food;
+        this.spicy = spicy;
+        this.quantity = quantity;
+    }
+}
+
+public static void main(String[] args) {
+
+    Order firstOrder = new Order("엽기 떡볶이", "덜 매운맛", 2);
+
+    Order secondOrder = new Order("엽기 떡볶이", "덜 매운맛", 2);
+
+    secondOrder = new Order("엽기 떡볶이", "오리지널 매운맛", 2); // 주문 변경
+}
+```
+
+VO의 값을 변경할 일이 생긴다면 생성자를 통해 객체를 새로 생성하고 재할당해 주어야 한다.
+
+### VO를 사용하는 이유
+
+VO를 사용하여 도메인을 설계하면 객체가 생성될 때 해당 객체안에 제약 사항을 추가할 수 있다.
+
+뿐만 아니라 생성될 인스턴스가 정해져 있는 경우, 미리 인스턴스를 생성해놓고 캐싱하여 성능을 높이는 것도 가능하다.
+
+엔티티의 원시 값들을 VO로 포장하면 엔티티가 지나치게 커지는 것을 방지할 수도 있어서, 테이블 관점이 아닌 객체 지향적인 관점으로 프로그래밍을 하는것이 가능하다.
+
+때문에 우리는 VO와 엔티티의 역할을 명확히 나누어서 보다 객체 지향적으로 설계하도록 노력해야 한다.
+
+**참고 자료** 📚
+
+- https://tecoble.techcourse.co.kr/post/2020-06-11-value-object/
