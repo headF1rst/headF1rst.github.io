@@ -2,7 +2,7 @@
 toc : true
 title : "[Docker 이론] 가상화와 컨테이너의 등장배경"
 category : 
-    - DevOps
+    - Infra
 ---
 
 ## 목차

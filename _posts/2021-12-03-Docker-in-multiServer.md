@@ -2,7 +2,7 @@
 toc : true
 title : "[Docker 이론] 다중 서버에서의 도커엔진"
 category : 
-    - DevOps
+    - Infra
 ---
 
 앞서 [[Docker 이론] 가상화와 컨테이너의 등장배경](https://headf1rst.github.io/devops/Docker-intro/) 포스트에선 단일 서버 내에서의 단일 도커엔진에 대해서 알아보았다. 
