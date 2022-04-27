@@ -2,7 +2,7 @@
 toc: true
 title: "Value Object로 OOP스러워 지기"
 category:
-    - Back_End
+    - Spring
 ---
 프로그래밍을 하다 보면 사물을 복합물로 표현하는 것이 유용한 경우가 있다.
 

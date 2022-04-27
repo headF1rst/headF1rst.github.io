@@ -2,7 +2,7 @@
 toc: true
 title: "[Spring security] 스프링 세큐리티 기본 개념 정리"
 category:
-  - Back_End
+  - Spring
 ---
 ## UserDetails 인터페이스
 사용자의 정보를 담는 인터페이스.

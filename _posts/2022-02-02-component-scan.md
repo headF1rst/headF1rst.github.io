@@ -2,7 +2,7 @@
 toc: true
 title: "수동, 자동 빈 등록 $($컴포넌트 스캔)"
 category:
-  - Back_End
+  - Spring
 ---
 **DI 컨테이너**는 객체를 생성하고 관리하며 의존관계를 주입해 주는 역할을 한다.
 

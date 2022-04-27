@@ -2,7 +2,7 @@
 toc : true
 title : "[Server] APM $($Apache, PHP, Mysql) 이란?"
 category : 
-    - Back_End
+    - Infra
 ---
 
 APM 이란 하나의 소프트웨어를 특정 짓는 것이 아닌 웹 서버 구축을 위한 Apache, Php, Mysql을 의미하는 것입니다. 

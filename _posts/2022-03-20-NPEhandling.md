@@ -2,7 +2,7 @@
 toc: true
 title: "여러 계층에서의 Optional을 통한 NPE 처리"
 category:
-  - Back_End
+  - Spring
 ---
 **null** 이라는 개념을 고안했던 영국의 컴퓨터 과학자 Tony Hoare는 당시에 
 "존재하지 않는 값"을 표현할 수 있는 가장 편리한 방법을 null 참조라고 생각하였으나 

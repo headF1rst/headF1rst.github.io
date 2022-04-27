@@ -2,7 +2,7 @@
 toc: true
 title: "주요 Lombok 에너테이션 정리"
 category:
-  - Back_End
+  - Spring
 ---
 이번 포스트에서는 `Lombok`라이브러리가 제공하는 에너테이션 중 자주 사용되는 에너테이션들을 살펴보도록 하겠다. 😎
 

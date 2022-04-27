@@ -2,7 +2,7 @@
 toc: true
 title: "[JPA]임베디드 타입과 값 타입 컬렉션"
 category:
-  - Back_End
+  - Spring Data
 ---
 JPA는 데이터를 두 개의 타입으로 분류한다.
 

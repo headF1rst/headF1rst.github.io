@@ -2,7 +2,7 @@
 toc : true
 title : "[JWT] 토큰 기반 인증 시스템 개요"
 category : 
-    - Back_End
+    - Spring
 ---
 ### 토큰 기반 인증 시스템이란?
 ---

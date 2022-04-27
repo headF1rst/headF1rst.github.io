@@ -2,7 +2,7 @@
 toc : true
 title : "[Server] APM 컴파일 수동 설치하기 2/3 - MySQL-8.0.19"
 category : 
-    - Back_End
+    - Infra
 ---
 ### 환경
 아래의 세팅이 완료된 상황에서 진행하였습니다.
