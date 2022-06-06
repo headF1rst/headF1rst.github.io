@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "[JUnit5] ParameterizedTest  -ValueSource, CsvSource, 
+title: "[JUnit5] ParameterizedTest - ValueSource, CsvSource, 
 NullAndEmptySource, MethodSource 어노테이션"
 category:
     - Spring
@@ -38,11 +38,11 @@ void minusOperatorTest() {
 
 ```java
 @DisplayName("올바른 사칙연산자의 경우 테스트")
-    @ParameterizedTest
-    @CsvSource(value = {"+ : +", "- : -", "* : *", "/ : /"}, delimiter = ':')
-    void correctOperators(String input, String output) {
-        assertThat(Operator.findOperator(input).getSymbol()).isEqualTo(output);
-    }
+@ParameterizedTest
+@CsvSource(value = {"+ : +", "- : -", "* : *", "/ : /"}, delimiter = ':')
+void correctOperators(String input, String output) {
+    assertThat(Operator.findOperator(input).getSymbol()).isEqualTo(output);
+}
 ```
 
 `@ParameterizedTest` 어노테이션을 사용하면 하나의 테스트 메서드로 여려 
@@ -98,7 +98,6 @@ public @interface ValueSource {
 	boolean[] booleans() default {};
 	String[] strings() default {};
 	Class<?>[] classes() default {};
-
 }
 ```
 
@@ -178,7 +177,8 @@ primitive data의 경우 null 값을 허용하지 않기 때문에 primitive
 
 만약 클래스 단위 생명 주기가 아닌 경우, static 메서드여야 합니다.
 
-다음은 `@MethodSource` 를 사용하여 Member 도메인 유효성 테스트를 진행한 예제입니다.
+다음은 `@MethodSource` 를 사용하여 Member 도메인 유효성 테스트를 진행한 
+예제입니다.
 
 ```java
 @DisplayName("Member 생성 유효성 테스트")
