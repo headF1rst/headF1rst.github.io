@@ -204,6 +204,7 @@ private static Stream<Arguments> provideStringsForCalculate() throws Throwable {
 
 [parameterizedTest - baeldung](https://www.baeldung.com/parameterized-tests-junit-5)
 
-[[JUnit] JUnit5 사용법 - Parameterized Tests - Heee's Development Blog](https://gmlwjd9405.github.io/2019/11/27/junit5-guide-parameterized-test.html)
+[[JUnit] JUnit5 사용법 - Parameterized Tests - 
+Heee's Development Blog](https://gmlwjd9405.github.io/2019/11/27/junit5-guide-parameterized-test.html)
 
 [JUnit 5 Parameterized Tests 사용하기](https://dublin-java.tistory.com/56)
