@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Blog"
+    url: https://headf1rst.github.io/log/ko/
   - title: "Category"
     url: /categories/
   - title: "dev-Diary"
